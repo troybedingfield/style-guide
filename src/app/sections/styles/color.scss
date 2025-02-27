@@ -1,12 +1,12 @@
 @use "../../../styles/varaibles";
 /* COLOR STYLES */
 
-#colors {
-    width: 70%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
+// .colors {
+//     width: 70%;
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+// }
 
 .color-container {
     display: flex;
@@ -32,7 +32,7 @@
     font-size: 14px;
 }
 
-#colors {
+.colors {
     .searchCon {
         position: relative;
         display: flex;
@@ -425,7 +425,7 @@
 }
 
 @media screen and (max-width: 475px) {
-    #colors {
+    .colors {
         width: 100%;
         position: relative;
         display: flex;
@@ -434,7 +434,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    #colors {
+    .colors {
         width: 100%;
         position: relative;
         display: flex;

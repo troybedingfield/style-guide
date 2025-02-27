@@ -1,9 +1,9 @@
-import { ColorData } from "../server/data/color"
+import { colorData } from "../server/data/color"
 import "./styles/color.scss"
 
 export default function Color() {
     return (
-        <div id="colors">
+        <div id="color">
 
 
 
@@ -11,7 +11,7 @@ export default function Color() {
 
             <div id="section-head">
                 <h3>
-                    {ColorData.map(title => {
+                    {colorData.map(title => {
                         return title.title;
                     })}
                 </h3>
@@ -25,7 +25,7 @@ export default function Color() {
             <div id="innerContainer">
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {ColorData.map(section => {
+                        {colorData.map(section => {
                             return (
                                 section.sections.map(sec => {
                                     if (sec.section === 'primary') {
@@ -55,7 +55,7 @@ export default function Color() {
                             <div>
 
                                 <div className="color-container">
-                                    {ColorData.map(section => {
+                                    {colorData.map(section => {
                                         return (section.colors.map(color => {
                                             if (color.type === 'primary') {
                                                 return (
@@ -93,7 +93,7 @@ export default function Color() {
 
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {ColorData.map(section => {
+                        {colorData.map(section => {
                             return (
                                 section.sections.map(sec => {
                                     if (sec.section === 'secondary') {
@@ -123,7 +123,7 @@ export default function Color() {
                             <div>
 
                                 <div className="color-container">
-                                    {ColorData.map(section => {
+                                    {colorData.map(section => {
                                         return (section.colors.map(color => {
                                             if (color.type === 'secondary') {
                                                 return (
@@ -161,7 +161,7 @@ export default function Color() {
 
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {ColorData.map(section => {
+                        {colorData.map(section => {
                             return (
                                 section.sections.map(sec => {
                                     if (sec.section === 'support') {
@@ -191,7 +191,7 @@ export default function Color() {
                             <div>
 
                                 <div className="color-container">
-                                    {ColorData.map(section => {
+                                    {colorData.map(section => {
                                         return (section.colors.map(color => {
                                             if (color.type === 'support') {
                                                 return (
@@ -230,7 +230,7 @@ export default function Color() {
 
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {ColorData.map(section => {
+                        {colorData.map(section => {
                             return (
                                 section.sections.map(sec => {
                                     if (sec.section === 'neutrals') {
@@ -260,7 +260,7 @@ export default function Color() {
                             <div>
 
                                 <div className="color-container">
-                                    {ColorData.map(section => {
+                                    {colorData.map(section => {
                                         return (section.colors.map(color => {
                                             if (color.type === 'neutrals') {
                                                 return (
@@ -299,7 +299,7 @@ export default function Color() {
 
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {ColorData.map(section => {
+                        {colorData.map(section => {
                             return (
                                 section.sections.map(sec => {
                                     if (sec.section === 'branding') {
@@ -321,7 +321,7 @@ export default function Color() {
                         <section>
                             <div>
                                 <div className="color-container">
-                                    {ColorData.map(section => {
+                                    {colorData.map(section => {
                                         return (section.colors.map(color => {
                                             if (color.type === 'branding') {
                                                 return (

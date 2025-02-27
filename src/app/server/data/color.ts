@@ -36,7 +36,7 @@ type ColorData = {
     ]
 }
 
-export const ColorData = [
+export const colorData = [
     {
         title: "Color",
         containerhide: [

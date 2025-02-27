@@ -63,7 +63,7 @@ type TypographyData = {
     ]
 }
 
-export const TypographyData = [
+export const typographyData = [
     {
         title: "Typography",
         containerhide: [

@@ -1,16 +1,16 @@
+'use client'
 import "./menu.scss"
 import Link from "next/link";
+import { useScrollspy } from "~/app/hooks/usescrollspy";
 import { menuData } from "~/app/server/data/menu";
 
 
 export default function Menu() {
 
-    // function clearSearch() {
-
-    // }
-    // function onFormSubmit() {
-
-    // }
+    const ids = menuData.map(id => {
+        return id.name;
+    });
+    const activeId = useScrollspy(ids, 64); // 54 is navigation height
 
 
     return (
@@ -49,7 +49,7 @@ export default function Menu() {
                 </div>
                 <nav>
                     {menuData.map((menu: any, index: number) => {
-                        return <Link key={index} id="menuItem" href={menu.link} >{menu.name}</Link>
+                        return <Link key={index} id="menuItem" href={menu.link} className={menu.name === activeId ? "column active" : ''}>{menu.name}</Link>
                     })}
                 </nav>
             </div>
@@ -59,3 +59,5 @@ export default function Menu() {
         </>
     )
 }
+
+

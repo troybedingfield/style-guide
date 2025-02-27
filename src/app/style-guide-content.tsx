@@ -1,4 +1,5 @@
 import Color from "./sections/color";
+import Columns from "./sections/columns";
 import Typography from "./sections/typography";
 
 export default function StyleGuideCotent() {
@@ -6,6 +7,7 @@ export default function StyleGuideCotent() {
         <>
             <Color />
             <Typography />
+            <Columns />
         </>
     )
 }

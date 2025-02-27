@@ -1,5 +1,5 @@
 import "./styles/typography.scss"
-import { TypographyData } from "../server/data/typography";
+import { typographyData } from "../server/data/typography";
 
 export default function Typography() {
     return (
@@ -7,7 +7,7 @@ export default function Typography() {
 
 
             <div id="section-head">
-                {TypographyData.map(title => {
+                {typographyData.map(title => {
                     return title.title;
                 })}
                 <hr />
@@ -21,13 +21,13 @@ export default function Typography() {
                 <div id="sectionContainer">
                     <div id="documentation">
 
-                        {TypographyData.map(des => {
+                        {typographyData.map(des => {
                             return des.documentation.map(doc => {
                                 return <p >{doc.body}</p>
                             });
                         })}
 
-                        {TypographyData.map(des => {
+                        {typographyData.map(des => {
                             return des.sections.map(sec => {
                                 if (sec.section === 'allheights') {
 
@@ -44,7 +44,7 @@ export default function Typography() {
                     </div>
                     <div id="typography" className="main-content">
                         <div className="headers-container">
-                            {TypographyData.map(des => {
+                            {typographyData.map(des => {
                                 return des.headlines.map(head => {
                                     return (
                                         <>
@@ -83,7 +83,7 @@ export default function Typography() {
                 <div id="sectionContainer">
                     <div id="documentation">
 
-                        {TypographyData.map(des => {
+                        {typographyData.map(des => {
                             return des.sections.map(sec => {
                                 if (sec.section === 'frequentlyused') {
 
@@ -100,7 +100,7 @@ export default function Typography() {
                     </div>
                     <div id="typography" className="main-content">
                         <section>
-                            {TypographyData.map(des => {
+                            {typographyData.map(des => {
                                 return des.frequentlyused.map(head => {
                                     return head.section1.map(sec => {
 
@@ -132,7 +132,7 @@ export default function Typography() {
                     </div>
                     <div id="typography" className="main-content">
                         <section>
-                            {TypographyData.map(des => {
+                            {typographyData.map(des => {
                                 return des.frequentlyused.map(head => {
                                     return head.section2.map(sec => {
 
@@ -146,6 +146,38 @@ export default function Typography() {
                                         )
 
                                     })
+
+
+
+                                });
+                            })}
+                        </section>
+                    </div>
+
+                </div>
+
+
+                <div id="sectionContainer">
+                    <div id="documentation">
+
+
+                    </div>
+                    <div id="typography" className="main-content">
+                        <section>
+                            {typographyData.map(des => {
+                                return des.twocolumns.map(two => {
+
+
+                                    return (
+                                        <>
+
+                                            <h5>{two.headline}</h5>
+                                            <p>{two.body}</p>
+                                        </>
+
+                                    )
+
+
 
 
 

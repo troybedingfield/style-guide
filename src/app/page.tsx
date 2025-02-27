@@ -11,7 +11,9 @@ export default function HomePage() {
 
       </div>
       <div className="main-content-area">
-        <StyleGuideCotent />
+        <div className="p-4">
+          <StyleGuideCotent />
+        </div>
       </div>
     </div>
 
