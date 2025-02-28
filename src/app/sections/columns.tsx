@@ -1,28 +1,43 @@
+import { Fragment } from "react";
 import { columnsData } from "../server/data/columns";
 import './styles/columns.scss'
 
-export default function Columns() {
+export default function Columns({
+    query,
+    currentPage,
+}: {
+    query: string;
+    currentPage: number;
+}) {
+    const columnsD = columnsData;
+    const columnsFilter = columnsD.filter(column => [query].every(e => column.meta.includes(e)))
     return (
         <div id="columns">
 
 
 
-            <div id="section-head">
-                {columnsData.map(title => {
-                    return title.title;
-                })}
-                <hr />
-            </div>
+
+            {columnsFilter.map((title, index) => {
+                return (
+                    <Fragment key={index}>
+                        <div id="section-head" className="py-4">
+                            <h3>{title.title}</h3>
+                            <hr />
+                        </div>
+                    </Fragment>
+                );
+            })}
+
 
             <div id="innerContainer">
 
                 <div id="sectionContainer">
 
                     <div id="documentation">
-                        {columnsData.map(docs => {
-                            return docs.documentation.map(doc => {
+                        {columnsFilter.map(docs => {
+                            return docs.documentation.map((doc, index) => {
                                 return (
-                                    <>
+                                    <Fragment key={index}>
                                         {doc.title === "Bootstrap" &&
                                             <>
                                                 <h6>{doc.title}</h6>
@@ -41,18 +56,7 @@ export default function Columns() {
                                                 <p >{doc.body}</p>
                                             </>
                                         }
-
-
-
-
-
-
-
-
-
-
-
-                                    </>
+                                    </Fragment>
                                 )
                             });
                         })}
@@ -65,20 +69,21 @@ export default function Columns() {
                     <div id="column" className="main-content">
 
 
-                        <div className="mb-20">
-                            <span className="box light-green bg"></span>&nbsp; =
-
-                            <small><strong>12px gutters</strong></small>
-                        </div>
 
 
-                        {columnsData.map(cols => {
-                            return cols.columns.map(col => {
+
+                        {columnsFilter.map(cols => {
+                            return cols.columns.map((col, index) => {
                                 return (
-                                    <>
+                                    <Fragment key={index}>
                                         {col.colNum === "2 Column" &&
 
-                                            <>
+                                            <Fragment>
+                                                <div className="mb-20">
+                                                    <span className="box light-green bg"></span>&nbsp; =
+
+                                                    <small><strong>12px gutters</strong></small>
+                                                </div>
                                                 <div className="gutterColumn">
                                                     <p >{col.colNum}</p>
                                                     <small><strong
@@ -104,11 +109,11 @@ export default function Columns() {
                                                         <p>&nbsp;</p>
                                                     </div>
                                                 </div>
-                                            </>
+                                            </Fragment>
                                         }
                                         {col.colNum === "3 Column" &&
 
-                                            <>
+                                            <Fragment key={index}>
                                                 <div className="gutterColumn">
                                                     <p >{col.colNum}</p>
                                                     <small><strong
@@ -140,11 +145,11 @@ export default function Columns() {
                                                         <p>&nbsp;</p>
                                                     </div>
                                                 </div>
-                                            </>
+                                            </Fragment>
                                         }
                                         {col.colNum === "4 Column" &&
 
-                                            <>
+                                            <Fragment key={index}>
                                                 <div className="gutterColumn">
                                                     <p >{col.colNum}</p>
                                                     <small><strong
@@ -182,20 +187,9 @@ export default function Columns() {
                                                         <p>&nbsp;</p>
                                                     </div>
                                                 </div>
-                                            </>
+                                            </Fragment>
                                         }
-
-
-
-
-
-
-
-
-
-
-
-                                    </>
+                                    </Fragment>
                                 )
                             });
                         })}
@@ -238,34 +232,36 @@ export default function Columns() {
 
                 <div id="column" className="main-content">
 
-
-                    {columnsData.map(cols => {
-                        return cols.twocolumns.map(col => {
-                            return (
-                                <>
-                                    <div className="gut-default light-green bg">
-                                        <p>&nbsp;</p>
-                                    </div>
-                                    <div className="column-2-current">
-                                        <div className="panel panel-default">
-                                            <div className="panel-heading">
-                                                <span className="panel-title">
-                                                    {col.headline}
-                                                </span>
+                    <div className="container grid grid-cols-12">
+                        {columnsFilter.map(cols => {
+                            return cols.twocolumns.map((col, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        <div className="flex col-span-6">
+                                            <div className="gut-default light-green bg">
+                                                <p>&nbsp;</p>
                                             </div>
-                                            <div className="panel-body">
-                                                {col.body}
+                                            <div className="column-2-current">
+                                                <div className="panel panel-default">
+                                                    <div className="panel-heading">
+                                                        <h5 className="panel-title">
+                                                            {col.headline}
+                                                        </h5>
+                                                    </div>
+                                                    <div className="panel-body">
+                                                        {col.body}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="gut-default light-green bg">
+                                                <p>&nbsp;</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="gut-default light-green bg">
-                                        <p>&nbsp;</p>
-                                    </div>
-                                </>
-                            )
-                        });
-                    })}
-
+                                    </Fragment>
+                                )
+                            });
+                        })}
+                    </div>
 
 
 
@@ -290,34 +286,36 @@ export default function Columns() {
                 </div>
 
                 <div id="column" className="main-content">
-
-                    {columnsData.map(cols => {
-                        return cols.threecolumns.map(col => {
-                            return (
-                                <>
-                                    <div className="gut-default light-green bg">
-                                        <p>&nbsp;</p>
-                                    </div>
-                                    <div className="column-3-current">
-                                        <div className="panel panel-default">
-                                            <div className="panel-heading">
-                                                <span className="panel-title">
-                                                    {col.headline}
-                                                </span>
+                    <div className="container grid grid-cols-12">
+                        {columnsFilter.map(cols => {
+                            return cols.threecolumns.map((col, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        <div className="flex col-span-4">
+                                            <div className="gut-default light-green bg">
+                                                <p>&nbsp;</p>
                                             </div>
-                                            <div className="panel-body">
-                                                {col.body}
+                                            <div className="column-3-current">
+                                                <div className="panel panel-default">
+                                                    <div className="panel-heading">
+                                                        <h5 className="panel-title">
+                                                            {col.headline}
+                                                        </h5>
+                                                    </div>
+                                                    <div className="panel-body">
+                                                        {col.body}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="gut-default light-green bg">
+                                                <p>&nbsp;</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="gut-default light-green bg">
-                                        <p>&nbsp;</p>
-                                    </div>
-                                </>
-                            )
-                        });
-                    })}
-
+                                    </Fragment>
+                                )
+                            });
+                        })}
+                    </div>
 
 
                 </div>
@@ -338,17 +336,17 @@ export default function Columns() {
             <div id="sectionContainer">
                 <div id="documentation">
 
-                    {columnsData.map(cols => {
-                        return cols.documentation.map(col => {
+                    {columnsFilter.map(cols => {
+                        return cols.documentation.map((col, index) => {
                             return (
-                                <>
+                                <Fragment key={index}>
                                     {col.title === "Bootstrap Example" &&
                                         <>
                                             <h6>{col.title}</h6>
                                             <p>{col.body}</p>
                                         </>
                                     }
-                                </>
+                                </Fragment>
                             )
                         });
                     })}
@@ -357,81 +355,93 @@ export default function Columns() {
 
                 <div id="column" className="main-content">
 
+                    {columnsFilter.map(cols => {
+                        return cols.colexample.map((col, index) => {
+                            return (
+                                <Fragment key={index}>
+                                    {col.title === "columns" &&
+                                        <Fragment >
+                                            <h6>Desktop</h6>
+
+                                            <div id="bs-grid-example" className="container grid grid-cols-12">
 
 
-                    <h6>Desktop</h6>
 
-                    <div id="bs-grid-example" className="row ">
-
-
-                        <div className="row p-0 light-blue bg">
-                            <div className="col-sm-12">
-                                <div className="column-example">100%</div>
-                            </div>
-                        </div>
+                                                <div className="col-span-12 light-blue bg">
+                                                    <div className="column-example">100%</div>
+                                                </div>
 
 
-                        <div className="row p-0 light-yellow bg">
-                            <div className="col-sm-6">
-                                <div className="column-example">50%</div>
-                            </div>
-                            <div className="col-sm-6">
-                                <div className="column-example ">50%</div>
-                            </div>
-                        </div>
 
 
-                        <div className="row p-0 light-orange bg">
-                            <div className="col-sm-4">
-                                <div className="column-example">33.3%</div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="column-example ">33.3%</div>
-                            </div>
-                            <div className="col-sm-4">
-                                <div className="column-example ">33.3%</div>
-                            </div>
-                        </div>
+                                                <div className="col-span-6 light-yellow bg">
+                                                    <div className="column-example">50%</div>
+                                                </div>
+                                                <div className="col-span-6 light-yellow bg">
+                                                    <div className="column-example ">50%</div>
+                                                </div>
 
 
-                        <div className="row p-0 light-red bg">
-                            <div className="col-sm-3">
-                                <div className="column-example">25%</div>
-                            </div>
-                            <div className="col-sm-3">
-                                <div className="column-example ">25%</div>
-                            </div>
-                            <div className="col-sm-3">
-                                <div className="column-example ">25%</div>
-                            </div>
-                            <div className="col-sm-3">
-                                <div className="column-example ">25%</div>
-                            </div>
-                        </div>
 
 
-                        <div className="row p-0 light-green bg">
-                            <div className="col-sm-2">
-                                <div className="column-example">16.6%</div>
-                            </div>
-                            <div className="col-sm-2">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-2">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-2">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-2">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-2">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                        </div>
+                                                <div className="col-span-4 light-orange bg">
+                                                    <div className="column-example">33.3%</div>
+                                                </div>
+                                                <div className="col-span-4 light-orange bg">
+                                                    <div className="column-example ">33.3%</div>
+                                                </div>
+                                                <div className="col-span-4 light-orange bg">
+                                                    <div className="column-example ">33.3%</div>
+                                                </div>
 
-                    </div>
+
+
+
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example">25%</div>
+                                                </div>
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example ">25%</div>
+                                                </div>
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example ">25%</div>
+                                                </div>
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example ">25%</div>
+                                                </div>
+
+
+
+
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example">16.6%</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">16.6%</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">16.6%</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">16.6%</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">16.6%</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">16.6%</div>
+                                                </div>
+
+
+                                            </div>
+                                        </Fragment>
+                                    }
+                                </Fragment>
+                            )
+                        });
+                    })}
+
+
 
 
 
@@ -451,7 +461,7 @@ export default function Columns() {
             <div id="sectionContainer">
                 <div id="documentation">
 
-                    {columnsData.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.documentation.map(col => {
                             return (
                                 <>
@@ -472,83 +482,96 @@ export default function Columns() {
 
                 <div id="column" className="main-content">
 
+                    {columnsFilter.map(cols => {
+                        return cols.colexample.map((col, index) => {
+                            return (
+                                <Fragment key={index}>
+                                    {col.title === "columns" &&
+                                        <Fragment >
+                                            <h6>Mobile</h6>
+
+                                            <div id="mobile-view" className="row p-0">
+
+                                                <div className="row p-0 light-blue bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">100%</div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="row p-0 light-yellow bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">50%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">50%</div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div className="row p-0 light-orange bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">33.3%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">33.3%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">33.3%</div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div className="row p-0 light-red bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">25%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">25%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">25%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">25%</div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div className="row p-0 light-green bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">16.6%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">16.6%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">16.6%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">16.6%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">16.6%</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">16.6%</div>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </Fragment>
+                                    }
+                                </Fragment>
+                            )
+                        });
+                    })}
 
 
 
 
-                    <h6>Mobile</h6>
 
-                    <div id="mobile-view" className="row p-0">
-
-                        <div className="row p-0 light-blue bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">100%</div>
-                            </div>
-                        </div>
-
-                        <div className="row p-0 light-yellow bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">50%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">50%</div>
-                            </div>
-                        </div>
-
-
-                        <div className="row p-0 light-orange bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">33.3%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">33.3%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">33.3%</div>
-                            </div>
-                        </div>
-
-
-                        <div className="row p-0 light-red bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">25%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">25%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">25%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">25%</div>
-                            </div>
-                        </div>
-
-
-                        <div className="row p-0 light-green bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">16.6%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">16.6%</div>
-                            </div>
-                        </div>
-
-
-
-                    </div>
 
 
                 </div>
@@ -566,7 +589,7 @@ export default function Columns() {
 
 
 
-            <div id="sectionContainer">
+            {/* <div id="sectionContainer">
                 <div id="documentation">
 
                 </div>
@@ -587,7 +610,7 @@ export default function Columns() {
 
 
                 </div>
-            </div>
+            </div> */}
 
 
 
@@ -600,7 +623,7 @@ export default function Columns() {
                 <div id="documentation">
 
 
-                    {columnsData.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.documentation.map(col => {
                             return (
                                 <>
@@ -619,80 +642,94 @@ export default function Columns() {
 
                 <div id="column" className="main-content">
 
+                    {columnsFilter.map(cols => {
+                        return cols.colexample.map((col, index) => {
+                            return (
+                                <Fragment key={index}>
+                                    {col.title === "columns" &&
+                                        <Fragment >
+                                            <h6>Desktop</h6>
 
-                    <h6>Desktop</h6>
-
-                    <div id="bs-grid-example" className="row ">
-
-
-                        <div className="row p-0 light-blue bg">
-                            <div className="col-sm-12">
-                                <div className="column-example">1</div>
-                            </div>
-                        </div>
+                                            <div id="bs-grid-example" className="container grid grid-cols-12">
 
 
-                        <div className="row p-0 light-yellow bg">
-                            <div className="col-sm-6 order-1 order-sm-0">
-                                <div className="column-example">1</div>
-                            </div>
-                            <div className="col-sm-6 order-0 order-sm-1">
-                                <div className="column-example ">2</div>
-                            </div>
-                        </div>
+
+                                                <div className="col-span-12 light-blue bg">
+                                                    <div className="column-example">1</div>
+                                                </div>
 
 
-                        <div className="row p-0 light-orange bg">
-                            <div className="col-sm-4 order-0 order-sm-0">
-                                <div className="column-example">1</div>
-                            </div>
-                            <div className="col-sm-4 order-2 order-sm-1">
-                                <div className="column-example ">2</div>
-                            </div>
-                            <div className="col-sm-4 order-1 order-sm-2">
-                                <div className="column-example ">3</div>
-                            </div>
-                        </div>
 
 
-                        <div className="row p-0 light-red bg">
-                            <div className="col-sm-3 order-1 order-sm-0">
-                                <div className="column-example">1</div>
-                            </div>
-                            <div className="col-sm-3 order-0 order-sm-1">
-                                <div className="column-example ">2</div>
-                            </div>
-                            <div className="col-sm-3 order-3 order-sm-2">
-                                <div className="column-example ">3</div>
-                            </div>
-                            <div className="col-sm-3 order-2 order-sm-3">
-                                <div className="column-example ">4</div>
-                            </div>
-                        </div>
+                                                <div className="col-span-6 light-yellow bg">
+                                                    <div className="column-example">1</div>
+                                                </div>
+                                                <div className="col-span-6 light-yellow bg ">
+                                                    <div className="column-example ">2</div>
+                                                </div>
 
 
-                        <div className="row p-0 light-green bg">
-                            <div className="col-sm-2 order-5 order-sm-0">
-                                <div className="column-example">1</div>
-                            </div>
-                            <div className="col-sm-2 order-4 order-sm-1">
-                                <div className="column-example ">2</div>
-                            </div>
-                            <div className="col-sm-2 order-2 order-sm-2">
-                                <div className="column-example ">3</div>
-                            </div>
-                            <div className="col-sm-2 order-3 order-sm-3">
-                                <div className="column-example ">4</div>
-                            </div>
-                            <div className="col-sm-2 order-1 order-sm-4">
-                                <div className="column-example ">5</div>
-                            </div>
-                            <div className="col-sm-2 order-0 order-sm-5">
-                                <div className="column-example ">6</div>
-                            </div>
-                        </div>
 
-                    </div>
+
+                                                <div className="col-span-4 light-orange bg">
+                                                    <div className="column-example">1</div>
+                                                </div>
+                                                <div className="col-span-4 light-orange bg">
+                                                    <div className="column-example ">2</div>
+                                                </div>
+                                                <div className="col-span-4 light-orange bg">
+                                                    <div className="column-example ">3</div>
+                                                </div>
+
+
+
+
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example">1</div>
+                                                </div>
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example ">2</div>
+                                                </div>
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example ">3</div>
+                                                </div>
+                                                <div className="col-span-3 light-red bg">
+                                                    <div className="column-example ">4</div>
+                                                </div>
+
+
+
+
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example">1</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">2</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">3</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">4</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">5</div>
+                                                </div>
+                                                <div className="col-span-2 light-green bg">
+                                                    <div className="column-example ">6</div>
+                                                </div>
+
+
+                                            </div>
+                                        </Fragment>
+                                    }
+                                </Fragment>
+                            )
+                        });
+                    })}
+
+
+
 
 
 
@@ -722,7 +759,7 @@ export default function Columns() {
                 <div id="documentation">
 
 
-                    {columnsData.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.documentation.map(col => {
                             return (
                                 <>
@@ -741,92 +778,91 @@ export default function Columns() {
 
                 <div id="column" className="main-content">
 
+                    {columnsFilter.map(cols => {
+                        return cols.colexample.map((col, index) => {
+                            return (
+                                <Fragment key={index}>
+                                    {col.title === "columns" &&
+                                        <Fragment >
+                                            <h6>Mobile</h6>
+                                            <div id="mobile-view" className="row ">
+
+                                                <div className="row p-0 light-blue bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">1</div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="row p-0 light-yellow bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">2</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">1</div>
+                                                    </div>
+                                                </div>
 
 
-                    <h6>Mobile</h6>
-                    <div id="mobile-view" className="row ">
-
-                        <div className="row p-0 light-blue bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">1</div>
-                            </div>
-                        </div>
-
-                        <div className="row p-0 light-yellow bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">2</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">1</div>
-                            </div>
-                        </div>
+                                                <div className="row p-0 light-orange bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">1</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">3</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">2</div>
+                                                    </div>
+                                                </div>
 
 
-                        <div className="row p-0 light-orange bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">1</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">3</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">2</div>
-                            </div>
-                        </div>
+                                                <div className="row p-0 light-red bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">2</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">1</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">4</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">3</div>
+                                                    </div>
+                                                </div>
 
 
-                        <div className="row p-0 light-red bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">2</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">1</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">4</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">3</div>
-                            </div>
-                        </div>
-
-
-                        <div className="row p-0 light-green bg">
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example">6</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">5</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">3</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">4</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">2</div>
-                            </div>
-                            <div className="col-sm-12 p-0 m-0">
-                                <div className="column-example ">1</div>
-                            </div>
-                        </div>
+                                                <div className="row p-0 light-green bg">
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example">6</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">5</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">3</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">4</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">2</div>
+                                                    </div>
+                                                    <div className="col-sm-12 p-0 m-0">
+                                                        <div className="column-example ">1</div>
+                                                    </div>
+                                                </div>
 
 
 
-                    </div>
-
-
-
-
+                                            </div>
+                                        </Fragment>
+                                    }
+                                </Fragment>
+                            )
+                        });
+                    })}
                 </div>
-
-
-
-
-
-
-
             </div>
 
 
@@ -837,7 +873,7 @@ export default function Columns() {
 
 
 
-            <div id="sectionContainer">
+            {/* <div id="sectionContainer">
                 <div id="documentation">
 
 
@@ -860,7 +896,7 @@ export default function Columns() {
 
 
                 </div>
-            </div>
+            </div> */}
 
 
 

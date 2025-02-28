@@ -54,6 +54,7 @@ type columnsData = {
     colexample: [
         { title: string, meta: string }
     ],
+    meta: string
 }
 
 export const columnsData = [
@@ -682,5 +683,7 @@ export const columnsData = [
         colexample: [
             { title: "columns", meta: "columns" }
         ],
-    }
+        meta: "columns"
+    },
+
 ]

@@ -2,67 +2,103 @@
 
 @use './varaibles';
 
-:root {
-    --color-success: #7DC855;
-    --color-warning: #F5C205;
-    --color-error: #CA1011;
-
-    --color-primary-button: #EC7D1B;
-
-    --color-text: #5E6977;
-    --color-text-dark: #2B333D;
-    --color-text-disabled: #C7D2DB;
-    --color-text-hint: #86939e;
-    --color-text-placeholder: #bdc8d7;
-
-    --color-border: #DFE6EC;
-    --color-border-control: #BDC6CF;
-    --color-border-control-focused: #2196f3;
-
-    --color-control-disabled: #f5f7f7;
-
-    --color-link: #4a90e2;
-    --color-info: #78AEDE;
-    --color-highlight: yellow;
+@use "../styles/fonts/icon-font/icons.css";
 
 
-    --color-blue: #4a90e2;
-    --color-green: #7dc855;
-    --color-yellow: #f5c205;
-    --color-orange: #ec7d1b;
-    --color-red: #ca1011;
-    --color-pink: #be22a7;
-    --color-plum: #9840b8;
-    --color-purple: #7455b7;
-
-    --color-cherry: #eb561c;
-    --color-tangerine: #ec971b;
-    --color-lemon: #f5e705;
-    --color-mint: #afdb03;
-    --color-teal: #3cbbdd;
-    --color-blueberry: #674ae2;
-    --color-plum: #9840b8;
-    --color-cranberry: #be2267;
-
-    --color-light-blue: #e2f2fb;
-    --color-light-green: #e7f8de;
-    --color-light-yellow: #faf3d6;
-    --color-light-orange: #fbece2;
-    --color-light-red: #fbe2e2;
-    --color-light-pink: #fbe2f3;
-    --color-light-plum: #efe2fb;
-    --color-light-purple: #e2e8fb;
-
-    --color-alt-blue: #005295;
-
-
-}
 
 html {
     scroll-behavior: smooth;
 }
 
 
+
+
+
+h1 {
+    font-weight: 700;
+    font-size: 72px;
+    color: varaibles.$gray-600;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 52px;
+    color: varaibles.$gray-600;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 42px;
+    color: varaibles.$gray-600;
+}
+
+h4 {
+    font-weight: 300;
+    font-size: 26px;
+    color: varaibles.$gray-600;
+}
+
+h5 {
+    font-weight: 700;
+    font-size: 18px;
+    color: varaibles.$gray-600;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 16px;
+    color: varaibles.$gray-600;
+}
+
+h7 {
+    font-weight: 400;
+    font-size: 18px;
+    color: varaibles.$gray-600;
+}
+
+.gridCells {
+    font-weight: 400;
+    font-size: 18px;
+    color: varaibles.$gray-600;
+}
+
+h6.gridCells {
+    font-weight: 400;
+    font-size: 18px;
+    color: varaibles.$gray-600;
+}
+
+h8 {
+    font-weight: 400;
+    font-size: 16px;
+    color: varaibles.$gray-500;
+}
+
+.bodyCopy {
+    font-weight: 400;
+    font-size: 16px;
+    color: varaibles.$gray-500;
+}
+
+h9 {
+    font-weight: 400;
+    font-size: 14px;
+    color: varaibles.$gray-500;
+}
+
+.smallCopy {
+    font-weight: 400;
+    font-size: 14px;
+    color: varaibles.$gray-500;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.panel-default>.panel-heading {
+    border-bottom: solid 2px varaibles.$gray-500;
+}
 
 .fixedHead {
     position: fixed;
@@ -809,4 +845,20 @@ nav {
         margin-top: 24px;
         flex-direction: column;
     }
+}
+
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #3e5771;
+    background-color: #fbfcfc;
+    border: 1px solid #e7edf2;
+    border-radius: 4px;
+    overflow: hidden;
 }

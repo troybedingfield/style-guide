@@ -1,7 +1,16 @@
+import { Fragment } from "react";
 import { colorData } from "../server/data/color"
 import "./styles/color.scss"
 
-export default function Color() {
+export default function Color({
+    query,
+    currentPage,
+}: {
+    query: string;
+    currentPage: number;
+}) {
+    const colorD = colorData;
+    const colorFilter = colorD.filter(color => [query].every(e => color.meta.includes(e)))
     return (
         <div id="color">
 
@@ -9,14 +18,21 @@ export default function Color() {
 
 
 
-            <div id="section-head">
-                <h3>
-                    {colorData.map(title => {
-                        return title.title;
-                    })}
-                </h3>
-                <hr />
-            </div>
+
+
+            {colorFilter.map((title, index) => {
+                return (
+                    <Fragment key={index}>
+                        <div id="section-head" className="py-4">
+                            <h3>{title.title}</h3>
+                            <hr />
+                        </div>
+                    </Fragment>
+                );
+            })}
+
+
+
 
 
 
@@ -25,19 +41,33 @@ export default function Color() {
             <div id="innerContainer">
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {colorData.map(section => {
+                        {colorFilter.map(section => {
                             return (
-                                section.sections.map(sec => {
+                                section.sections.map((sec, index) => {
                                     if (sec.section === 'primary') {
 
                                         return (
-                                            <>
+                                            <Fragment key={index}>
+
                                                 <h5>{sec.section}</h5>
                                                 <h6>{sec.title}</h6>
                                                 <p >{sec.body}</p>
 
 
-                                            </>
+                                            </Fragment>
+                                        )
+                                    }
+                                    if (sec.section === 'example') {
+
+                                        return (
+                                            <Fragment key={index}>
+
+                                                <h5>{sec.section}</h5>
+                                                <h6>{sec.title}</h6>
+                                                <p style={{ whiteSpace: 'pre-line' }}>{sec.body}</p>
+
+
+                                            </Fragment>
                                         )
                                     }
                                 }
@@ -47,41 +77,41 @@ export default function Color() {
                     </div>
 
 
+
                     <div id="colors" className="main-content">
 
 
+                        <div className="color-container">
 
-                        <section>
-                            <div>
-
-                                <div className="color-container">
-                                    {colorData.map(section => {
-                                        return (section.colors.map(color => {
-                                            if (color.type === 'primary') {
-                                                return (
-                                                    <>
-                                                        <div className="color">
-                                                            <div className={`color-box bg ${color.class}`}></div>
-                                                            <div className="color-text">
-                                                                <h4 >{color.hexcode}</h4>
-                                                                <h6 >{color.color}</h6>
-                                                                <p >{color.use}</p>
-                                                            </div>
-                                                        </div>
+                            {colorFilter.map(section => {
+                                return (section.colors.map((color, index) => {
+                                    if (color.type === 'primary') {
+                                        return (
+                                            <Fragment key={index}>
 
 
-                                                    </>
-                                                )
-                                            }
-                                        })
+
+                                                <div className="color">
+                                                    <div className={`color-box bg ${color.class}`}></div>
+                                                    <div className="color-text">
+                                                        <h4 >{color.hexcode}</h4>
+                                                        <h6 >{color.color}</h6>
+                                                        <p style={{ whiteSpace: 'pre-line' }}>{color.use}</p>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </Fragment>
                                         )
-                                    })}
-                                </div>
-                            </div>
+                                    }
+                                })
+                                )
+                            })}
 
-                        </section>
 
-
+                        </div>
 
 
 
@@ -93,19 +123,19 @@ export default function Color() {
 
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {colorData.map(section => {
+                        {colorFilter.map(section => {
                             return (
-                                section.sections.map(sec => {
+                                section.sections.map((sec, index) => {
                                     if (sec.section === 'secondary') {
 
                                         return (
-                                            <>
+                                            <Fragment key={index}>
                                                 <h5>{sec.section}</h5>
                                                 <h6>{sec.title}</h6>
                                                 <p >{sec.body}</p>
 
 
-                                            </>
+                                            </Fragment>
                                         )
                                     }
                                 }
@@ -118,37 +148,38 @@ export default function Color() {
                     <div id="colors" className="main-content">
 
 
+                        <div className="color-container">
 
-                        <section>
-                            <div>
-
-                                <div className="color-container">
-                                    {colorData.map(section => {
-                                        return (section.colors.map(color => {
-                                            if (color.type === 'secondary') {
-                                                return (
-                                                    <>
-                                                        <div className="color">
-                                                            <div className={`color-box bg ${color.class}`}></div>
-                                                            <div className="color-text">
-                                                                <h4 >{color.hexcode}</h4>
-                                                                <h6 >{color.color}</h6>
-                                                                <p >{color.use}</p>
-                                                            </div>
-                                                        </div>
+                            {colorFilter.map(section => {
+                                return (section.colors.map((color, index) => {
+                                    if (color.type === 'secondary') {
+                                        return (
+                                            <Fragment key={index}>
 
 
-                                                    </>
-                                                )
-                                            }
-                                        })
+
+
+                                                <div className="color">
+                                                    <div className={`color-box bg ${color.class}`}></div>
+                                                    <div className="color-text">
+                                                        <h4 >{color.hexcode}</h4>
+                                                        <h6 >{color.color}</h6>
+                                                        <p >{color.use}</p>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </Fragment>
                                         )
-                                    })}
-                                </div>
-                            </div>
+                                    }
+                                })
+                                )
+                            })}
 
-                        </section>
-
+                        </div>
 
 
 
@@ -160,131 +191,64 @@ export default function Color() {
                 </div>
 
                 <div id="sectionContainer" className="flex">
-                    <div id="documentation">
-                        {colorData.map(section => {
-                            return (
-                                section.sections.map(sec => {
-                                    if (sec.section === 'support') {
 
-                                        return (
-                                            <>
+                    {colorFilter.map(section => {
+                        return (
+                            section.sections.map((sec, index) => {
+                                if (sec.section === 'support') {
+
+                                    return (
+                                        <Fragment key={index}>
+                                            <div id="documentation">
                                                 <h5>{sec.section}</h5>
                                                 <h6>{sec.title}</h6>
                                                 <p >{sec.body}</p>
 
-
-                                            </>
-                                        )
-                                    }
+                                            </div>
+                                        </Fragment>
+                                    )
                                 }
-                                )
+                            }
                             )
-                        })}
-                    </div>
+                        )
+                    })}
+
 
 
                     <div id="colors" className="main-content">
 
 
+                        <div className="color-container">
 
-                        <section>
-                            <div>
-
-                                <div className="color-container">
-                                    {colorData.map(section => {
-                                        return (section.colors.map(color => {
-                                            if (color.type === 'support') {
-                                                return (
-                                                    <>
-                                                        <div className="color">
-                                                            <div className={`color-box bg ${color.class}`}></div>
-                                                            <div className="color-text">
-                                                                <h4 >{color.hexcode}</h4>
-                                                                <h6 >{color.color}</h6>
-                                                                <p >{color.use}</p>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </>
-                                                )
-                                            }
-                                        })
-                                        )
-                                    })}
-                                </div>
-                            </div>
-
-                        </section>
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-
-
-                <div id="sectionContainer" className="flex">
-                    <div id="documentation">
-                        {colorData.map(section => {
-                            return (
-                                section.sections.map(sec => {
-                                    if (sec.section === 'neutrals') {
-
+                            {colorFilter.map(section => {
+                                return (section.colors.map((color, index) => {
+                                    if (color.type === 'support') {
                                         return (
-                                            <>
-                                                <h5>{sec.section}</h5>
-                                                <h6>{sec.title}</h6>
-                                                <p >{sec.body}</p>
+                                            <Fragment key={index}>
 
 
-                                            </>
+
+
+                                                <div className="color">
+                                                    <div className={`color-box bg ${color.class}`}></div>
+                                                    <div className="color-text">
+                                                        <h4 >{color.hexcode}</h4>
+                                                        <h6 >{color.color}</h6>
+                                                        <p >{color.use}</p>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </Fragment>
                                         )
                                     }
-                                }
+                                })
                                 )
-                            )
-                        })}
-                    </div>
-
-
-                    <div id="colors" className="main-content">
-
-
-
-                        <section>
-                            <div>
-
-                                <div className="color-container">
-                                    {colorData.map(section => {
-                                        return (section.colors.map(color => {
-                                            if (color.type === 'neutrals') {
-                                                return (
-                                                    <>
-                                                        <div className="color">
-                                                            <div className={`color-box bg ${color.class}`}></div>
-                                                            <div className="color-text">
-                                                                <h4 >{color.hexcode}</h4>
-                                                                <h6 >{color.color}</h6>
-                                                                <p >{color.use}</p>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </>
-                                                )
-                                            }
-                                        })
-                                        )
-                                    })}
-                                </div>
-                            </div>
-
-                        </section>
+                            })}
+                        </div>
 
 
 
@@ -298,56 +262,130 @@ export default function Color() {
 
 
                 <div id="sectionContainer" className="flex">
-                    <div id="documentation">
-                        {colorData.map(section => {
-                            return (
-                                section.sections.map(sec => {
-                                    if (sec.section === 'branding') {
-                                        return (
-                                            <>
+
+                    {colorFilter.map(section => {
+                        return (
+                            section.sections.map((sec, index) => {
+                                if (sec.section === 'neutrals') {
+
+                                    return (
+                                        <Fragment key={index}>
+                                            <div id="documentation">
                                                 <h5>{sec.section}</h5>
                                                 <h6>{sec.title}</h6>
                                                 <p >{sec.body}</p>
-                                            </>
-                                        )
-                                    }
+                                            </div>
+
+                                        </Fragment>
+                                    )
                                 }
-                                )
+                            }
                             )
-                        })}
-                    </div>
+                        )
+                    })}
+
+
 
                     <div id="colors" className="main-content">
-                        <section>
-                            <div>
-                                <div className="color-container">
-                                    {colorData.map(section => {
-                                        return (section.colors.map(color => {
-                                            if (color.type === 'branding') {
-                                                return (
-                                                    <>
-                                                        <div className="color">
-                                                            <div className={`color-box bg ${color.class}`}></div>
-                                                            <div className="color-text">
-                                                                <h4 >{color.hexcode}</h4>
-                                                                <h6 >{color.color}</h6>
-                                                                <p >{color.use}</p>
-                                                            </div>
-                                                        </div>
 
 
-                                                    </>
-                                                )
-                                            }
-                                        })
+                        <div className="color-container">
+
+                            {colorFilter.map(section => {
+                                return (section.colors.map((color, index) => {
+                                    if (color.type === 'neutrals') {
+                                        return (
+                                            <Fragment key={index}>
+
+
+
+
+                                                <div className="color">
+                                                    <div className={`color-box bg ${color.class}`}></div>
+                                                    <div className="color-text">
+                                                        <h4 >{color.hexcode}</h4>
+                                                        <h6 >{color.color}</h6>
+                                                        <p >{color.use}</p>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </Fragment>
                                         )
-                                    })}
-                                </div>
-                            </div>
-                        </section>
+                                    }
+                                })
+                                )
+                            })}
+                        </div>
+
+
+
+
+
+
+
+
                     </div>
                 </div>
 
+
+                <div id="sectionContainer" className="flex">
+
+                    {colorFilter.map(section => {
+                        return (
+                            section.sections.map((sec, index) => {
+                                if (sec.section === 'branding') {
+                                    return (
+                                        <Fragment key={index}>
+                                            <div id="documentation">
+                                                <h5>{sec.section}</h5>
+                                                <h6>{sec.title}</h6>
+                                                <p >{sec.body}</p>
+                                            </div>
+                                        </Fragment>
+                                    )
+                                }
+                            }
+                            )
+                        )
+                    })}
+
+
+                    <div id="colors" className="main-content">
+                        <div className="color-container">
+                            {colorFilter.map(section => {
+                                return (section.colors.map((color, index) => {
+                                    if (color.type === 'branding') {
+                                        return (
+                                            <Fragment key={index}>
+
+
+
+                                                <div className="color">
+                                                    <div className={`color-box bg ${color.class}`}></div>
+                                                    <div className="color-text">
+                                                        <h4 >{color.hexcode}</h4>
+                                                        <h6 >{color.color}</h6>
+                                                        <p >{color.use}</p>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </Fragment>
+                                        )
+                                    }
+                                })
+                                )
+                            })}
+
+                        </div>
+                    </div>
+                </div>
 
 
 

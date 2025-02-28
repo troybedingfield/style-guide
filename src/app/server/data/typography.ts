@@ -60,7 +60,8 @@ type TypographyData = {
         {
             type: string
         }
-    ]
+    ],
+    meta: string
 }
 
 export const typographyData = [
@@ -70,15 +71,15 @@ export const typographyData = [
             { section: "typography", meta: "typography" },
         ],
         headlines: [
-            { head: "H1", tag: "h1", use: "Special", font: "Roboto", weight: "Medium (500)", size: "72px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
-            { head: "H2", tag: "h2", use: "Special", font: "Roboto", weight: "Light (300)", size: "52px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
-            { head: "H3", tag: "h3", use: "Page Title", font: "Roboto", weight: "Light (300)", size: "42px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
-            { head: "H4", tag: "h4", use: "Header", font: "Roboto", weight: "Light (300)", size: "26px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
-            { head: "H5 Title", tag: "h5", use: "Title", font: "Roboto", weight: "Medium (500)", size: "18px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
-            { head: "H6 Emphasize", tag: "h6", use: "Title Small", font: "Roboto", weight: "Medium (500)", size: "16px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
-            { head: "H7 Grid Cells", tag: "h7", use: "Grid Cells", font: "Roboto", weight: "Regular (400)", size: "18px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
-            { head: "H8 Body", tag: "h8", use: "Body Text", font: "Roboto", weight: "Regular (400)", size: "16px", color: "Gray 500", hex: "#5e6977", meta: "typography" },
-            { head: "H9 Smallest", tag: "h9", use: "Infographics", font: "Roboto", weight: "Regular (400)", size: "14px", color: "Gray 500", hex: "#5e6977", meta: "typography" },
+            { head: "H1", tag: "h1", use: "Special", font: "GeistSans", weight: "Medium (500)", size: "72px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
+            { head: "H2", tag: "h2", use: "Special", font: "GeistSans", weight: "Light (300)", size: "52px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
+            { head: "H3", tag: "h3", use: "Page Title", font: "GeistSans", weight: "Light (300)", size: "42px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
+            { head: "H4", tag: "h4", use: "Header", font: "GeistSans", weight: "Light (300)", size: "26px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
+            { head: "H5 Title", tag: "h5", use: "Title", font: "GeistSans", weight: "Medium (500)", size: "18px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
+            { head: "H6 Emphasize", tag: "h6", use: "Title Small", font: "GeistSans", weight: "Medium (500)", size: "16px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
+            { head: "H7 Grid Cells", tag: "h7", use: "Grid Cells", font: "GeistSans", weight: "Regular (400)", size: "18px", color: "Gray 600", hex: "#2b333d", meta: "typography" },
+            { head: "H8 Body", tag: "h8", use: "Body Text", font: "GeistSans", weight: "Regular (400)", size: "16px", color: "Gray 500", hex: "#5e6977", meta: "typography" },
+            { head: "H9 Smallest", tag: "h9", use: "Infographics", font: "GeistSans", weight: "Regular (400)", size: "14px", color: "Gray 500", hex: "#5e6977", meta: "typography" },
         ],
         documentation: [
             { body: "Fonts must be readable, scalable with a minimal amount of styling.", meta: "typography" },
@@ -111,6 +112,7 @@ export const typographyData = [
         ],
         spacer: [
             { type: 'spacer' }
-        ]
+        ],
+        meta: "typography"
     }
 ]

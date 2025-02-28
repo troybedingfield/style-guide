@@ -33,7 +33,8 @@ type ColorData = {
         {
             type: string
         }
-    ]
+    ],
+    meta: string
 }
 
 export const colorData = [
@@ -46,7 +47,7 @@ export const colorData = [
 
             {
                 id: 5,
-                hexcode: '#ca1011',
+                hexcode: '#D81A1B',
                 class: 'red',
                 color: 'red',
                 use: 'Information Error',
@@ -57,7 +58,7 @@ export const colorData = [
             },
             {
                 id: 4,
-                hexcode: '#ec7d1b',
+                hexcode: '#F07F1C',
                 class: 'orange',
                 color: 'orange',
                 use: 'Primary Button',
@@ -68,7 +69,7 @@ export const colorData = [
             },
             {
                 id: 3,
-                hexcode: '#f5c205',
+                hexcode: '#F9C505',
                 class: 'yellow',
                 color: 'yellow',
                 use: 'Information Warning',
@@ -79,7 +80,7 @@ export const colorData = [
             },
             {
                 id: 3,
-                hexcode: '#d9ed05',
+                hexcode: '#DEF20A',
                 class: 'lime',
                 color: 'lime',
                 use: 'Information Warning',
@@ -90,7 +91,7 @@ export const colorData = [
             },
             {
                 id: 2,
-                hexcode: '#7dc855',
+                hexcode: '#79CC4D',
                 class: 'green',
                 color: 'green',
                 use: 'Information Success',
@@ -101,7 +102,7 @@ export const colorData = [
             },
             {
                 id: 1,
-                hexcode: '#4a90e2',
+                hexcode: '#307ED9',
                 class: 'blue',
                 color: 'blue',
                 use: 'Button & Links',
@@ -112,7 +113,7 @@ export const colorData = [
             },
             {
                 id: 7,
-                hexcode: '#7455b7',
+                hexcode: '#6D4DB0',
                 class: 'purple',
                 color: 'purple',
                 use: 'Impersonation',
@@ -123,7 +124,7 @@ export const colorData = [
             },
             {
                 id: 6,
-                hexcode: '#be22a7',
+                hexcode: '#C820AF',
                 class: 'dragon-fruit',
                 color: 'dragon fruit',
                 use: 'TBD',
@@ -134,7 +135,7 @@ export const colorData = [
             },
             {
                 id: 31,
-                hexcode: '#eb561c',
+                hexcode: '#EB5116',
                 class: 'cherry',
                 color: 'cherry',
                 use: '',
@@ -145,7 +146,7 @@ export const colorData = [
             },
             {
                 id: 32,
-                hexcode: '#ec971b',
+                hexcode: '#E99417',
                 class: 'tangerine',
                 color: 'tangerine',
                 use: '',
@@ -156,7 +157,7 @@ export const colorData = [
             },
             {
                 id: 33,
-                hexcode: '#f5e705',
+                hexcode: '#F2E402',
                 class: 'lemon',
                 color: 'lemon',
                 use: '',
@@ -167,7 +168,7 @@ export const colorData = [
             },
             {
                 id: 34,
-                hexcode: '#afdb03',
+                hexcode: '#D7EB09',
                 class: 'mint',
                 color: 'mint',
                 use: '',
@@ -178,7 +179,7 @@ export const colorData = [
             },
             {
                 id: 35,
-                hexcode: '#3cbbdd',
+                hexcode: '#30B8DC',
                 class: 'teal',
                 color: 'teal',
                 use: '',
@@ -189,7 +190,7 @@ export const colorData = [
             },
             {
                 id: 36,
-                hexcode: '#674ae2',
+                hexcode: '#30B8DC',
                 class: 'blueberry',
                 color: 'blueberry',
                 use: '',
@@ -200,7 +201,7 @@ export const colorData = [
             },
             {
                 id: 37,
-                hexcode: '#9840b8',
+                hexcode: '#9C3DBF',
                 class: 'plum',
                 color: 'plum',
                 use: '',
@@ -211,7 +212,7 @@ export const colorData = [
             },
             {
                 id: 38,
-                hexcode: '#be2267',
+                hexcode: '#BF1F66',
                 class: 'cranberry',
                 color: 'cranberry',
                 use: '',
@@ -222,7 +223,7 @@ export const colorData = [
             },
             {
                 id: 8,
-                hexcode: '#e2f2fb',
+                hexcode: '#DCEDF6',
                 class: 'light-blue',
                 color: 'light blue',
                 use: 'Information Banner BG',
@@ -233,7 +234,7 @@ export const colorData = [
             },
             {
                 id: 9,
-                hexcode: '#e7f8de',
+                hexcode: '#E3F5DA',
                 class: 'light-green',
                 color: 'light green',
                 use: 'Information Banner BG',
@@ -244,7 +245,7 @@ export const colorData = [
             },
             {
                 id: 10,
-                hexcode: '#faf3d6',
+                hexcode: '#F5EED0',
                 class: 'light-yellow',
                 color: 'light yellow',
                 use: 'Information Banner BG',
@@ -255,7 +256,7 @@ export const colorData = [
             },
             {
                 id: 11,
-                hexcode: '#fbece2',
+                hexcode: '#F6E6DB',
                 class: 'light-orange',
                 color: 'light orange',
                 use: 'Widget BG',
@@ -266,7 +267,7 @@ export const colorData = [
             },
             {
                 id: 12,
-                hexcode: '#fbe2e2',
+                hexcode: '#F6DDDD',
                 class: 'light-red',
                 color: 'light red',
                 use: 'Impersonation',
@@ -277,7 +278,7 @@ export const colorData = [
             },
             {
                 id: 13,
-                hexcode: '#fbe2f3',
+                hexcode: '#F6DFEF',
                 class: 'light-pink',
                 color: 'light pink',
                 use: 'Widget BG',
@@ -288,7 +289,7 @@ export const colorData = [
             },
             {
                 id: 14,
-                hexcode: '#efe2fb',
+                hexcode: '#E4D5F2',
                 class: 'light-plum',
                 color: 'light plum',
                 use: 'Widget BG',
@@ -299,7 +300,7 @@ export const colorData = [
             },
             {
                 id: 15,
-                hexcode: '#e2e8fb',
+                hexcode: '#DAE0F5',
                 class: 'light-purple',
                 color: 'light purple',
                 use: 'Widget BG',
@@ -310,7 +311,7 @@ export const colorData = [
             },
             {
                 id: 16,
-                hexcode: '#2b333d',
+                hexcode: '#272D34',
                 class: 'gray-600',
                 color: 'gray 600',
                 use: 'Dark Text',
@@ -321,7 +322,7 @@ export const colorData = [
             },
             {
                 id: 17,
-                hexcode: '#5e6977',
+                hexcode: '#5C6470',
                 class: 'gray-500',
                 color: 'gray 500',
                 use: 'Text\nMenu Text',
@@ -332,7 +333,7 @@ export const colorData = [
             },
             {
                 id: 18,
-                hexcode: '#86939e',
+                hexcode: '#7F8C96',
                 class: 'gray-400',
                 color: 'gray 400',
                 use: 'Hint Text',
@@ -343,7 +344,7 @@ export const colorData = [
             },
             {
                 id: 19,
-                hexcode: '#c7d2db',
+                hexcode: '#C3CCD2',
                 class: 'gray-300',
                 color: 'gray 300',
                 use: 'Disabled Text\nForm Outline\nMenus\nPopups',
@@ -354,7 +355,7 @@ export const colorData = [
             },
             {
                 id: 20,
-                hexcode: '#dfe6ec',
+                hexcode: '#DFE5EA',
                 class: 'gray-200',
                 color: 'gray 200',
                 use: 'Divider Lines',
@@ -365,7 +366,7 @@ export const colorData = [
             },
             {
                 id: 21,
-                hexcode: '#f1f4f4',
+                hexcode: '#EBEEEE',
                 class: 'gray-100',
                 color: 'gray 100',
                 use: 'Background\nFilter BG',
@@ -376,7 +377,7 @@ export const colorData = [
             },
             {
                 id: 22,
-                hexcode: '#f3f6f8',
+                hexcode: '#F2F2F2',
                 class: 'blue-gray',
                 color: 'blue gray',
                 use: 'Hover State\nDisabled BG',
@@ -387,7 +388,7 @@ export const colorData = [
             },
             {
                 id: 23,
-                hexcode: '#fafafa',
+                hexcode: '#FBFBFB',
                 class: 'red-gray',
                 color: 'red gray',
                 use: 'Headers',
@@ -398,9 +399,9 @@ export const colorData = [
             },
             {
                 id: 24,
-                hexcode: '#0c223f',
-                class: 'dark-blue',
-                color: 'dark blue',
+                hexcode: '#0C3F21',
+                class: 'dark-green',
+                color: 'dark green',
                 use: 'Logo',
                 type: 'branding',
                 category: 'global',
@@ -409,9 +410,9 @@ export const colorData = [
             },
             {
                 id: 25,
-                hexcode: '#21446f',
-                class: 'main-nav-blue',
-                color: 'main nav blue',
+                hexcode: '#2A6F21',
+                class: 'main-nav-green',
+                color: 'main nav',
                 use: 'Bottom Gradient',
                 type: 'branding',
                 category: 'global',
@@ -420,9 +421,9 @@ export const colorData = [
             },
             {
                 id: 26,
-                hexcode: '#346095',
-                class: 'hover-blue',
-                color: 'hover blue',
+                hexcode: '#399534',
+                class: 'hover-green',
+                color: 'hover green',
                 use: 'Top Gradient\nMain Nav\nIcon Hover State\nLogo: Top swoosh',
                 type: 'branding',
                 category: 'global',
@@ -431,10 +432,10 @@ export const colorData = [
             },
             {
                 id: 27,
-                hexcode: '#62a844',
-                class: 'dark-green',
-                color: 'dark green',
-                use: 'Logo Swoosh',
+                hexcode: '#44A880',
+                class: 'brand-green',
+                color: 'brand green',
+                use: 'Logo',
                 type: 'branding',
                 category: 'global',
                 subcat: 'color',
@@ -442,9 +443,9 @@ export const colorData = [
             },
             {
                 id: 28,
-                hexcode: '#fede53',
-                class: 'code-yellow',
-                color: 'code yellow',
+                hexcode: '#53E4FE',
+                class: 'code-teal',
+                color: 'code teal',
                 use: 'Use for code blocks on dark backgrounds',
                 type: 'branding',
                 category: 'global',
@@ -482,7 +483,6 @@ export const colorData = [
         ],
         sections: [
             { section: "primary", title: "Core and Informational Color", body: "Use when communicating a primary, secondary or conditional state. These are used on buttons, links, status badges and charts.", example: "", meta: "colors" },
-            { section: "readyxlibrary", title: "readyX Component Library", body: "https://atl0dev81web.dev.Company.org/readyXviewer/", example: "", meta: "banners RPO Components RPOComponents" },
             { section: "example", title: "For Example", body: "Red = Taxes\nYellow = Deductions\nBlue = Benefits\nGreen = Earnings", example: "", meta: "colors" },
             { section: "secondary", title: "Secondary Colors", body: "These are used in the navigation system", example: "", meta: "colors" },
             { section: "support", title: "Support Colors", body: "Use in background and grid headers", example: "", meta: "colors" },
@@ -491,7 +491,7 @@ export const colorData = [
         ],
         spacer: [
             { type: 'spacer' }
-        ]
-
+        ],
+        meta: "color"
     }
 ]

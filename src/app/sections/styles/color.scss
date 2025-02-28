@@ -32,7 +32,7 @@
     font-size: 14px;
 }
 
-.colors {
+#colors {
     .searchCon {
         position: relative;
         display: flex;
@@ -364,30 +364,6 @@
     }
 }
 
-.dark-blue {
-    color: varaibles.$dark-blue;
-
-    &.bg {
-        background-color: varaibles.$dark-blue;
-    }
-}
-
-.main-nav-blue {
-    color: varaibles.$main-nav-blue;
-
-    &.bg {
-        background-color: varaibles.$main-nav-blue;
-    }
-}
-
-.hover-blue {
-    color: varaibles.$hover-blue;
-
-    &.bg {
-        background-color: varaibles.$hover-blue;
-    }
-}
-
 .dark-green {
     color: varaibles.$dark-green;
 
@@ -396,11 +372,35 @@
     }
 }
 
-.code-yellow {
-    color: varaibles.$code-yellow;
+.main-nav-green {
+    color: varaibles.$main-nav-green;
 
     &.bg {
-        background-color: varaibles.$code-yellow;
+        background-color: varaibles.$main-nav-green;
+    }
+}
+
+.hover-green {
+    color: varaibles.$hover-green;
+
+    &.bg {
+        background-color: varaibles.$hover-green;
+    }
+}
+
+.brand-green {
+    color: varaibles.$brand-green;
+
+    &.bg {
+        background-color: varaibles.$brand-green;
+    }
+}
+
+.code-teal {
+    color: varaibles.$code-teal;
+
+    &.bg {
+        background-color: varaibles.$code-teal;
     }
 }
 
@@ -425,7 +425,7 @@
 }
 
 @media screen and (max-width: 475px) {
-    .colors {
+    #colors {
         width: 100%;
         position: relative;
         display: flex;
@@ -434,7 +434,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .colors {
+    #colors {
         width: 100%;
         position: relative;
         display: flex;

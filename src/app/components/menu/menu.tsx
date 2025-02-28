@@ -3,6 +3,7 @@ import "./menu.scss"
 import Link from "next/link";
 import { useScrollspy } from "~/app/hooks/usescrollspy";
 import { menuData } from "~/app/server/data/menu";
+import Search from "../search/search";
 
 
 export default function Menu() {
@@ -23,7 +24,7 @@ export default function Menu() {
                         <h5>UX StyleGuide</h5>
                     </div>
                     <div className="head-search">
-                        <form >
+                        {/* <form >
                             <input
 
                                 type="text"
@@ -34,7 +35,8 @@ export default function Menu() {
 
                             />
 
-                        </form>
+                        </form> */}
+                        <Search placeholder={"Search..."} />
                         <div id="desktop-clear" className="hide">
                             <div
                                 id="closeIconDesktop"
