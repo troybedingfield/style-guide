@@ -41,7 +41,9 @@ export default function Typography({
                             return des.documentation.map((doc, index) => {
                                 return (
                                     <Fragment key={index}>
-                                        <p>{doc.body}</p>
+                                        <div className="py-4">
+                                            <p>{doc.body}</p>
+                                        </div>
                                     </Fragment>
                                 )
                             });
@@ -53,8 +55,10 @@ export default function Typography({
 
                                     return (
                                         <Fragment key={index}>
-                                            <h6 >{sec.title}</h6>
-                                            <p >{sec.body}</p>
+                                            <div className="py-4">
+                                                <h6 >{sec.title}</h6>
+                                                <p >{sec.body}</p>
+                                            </div>
                                         </Fragment>
                                     )
                                 }
@@ -109,8 +113,10 @@ export default function Typography({
                                 return (
                                     <Fragment key={index}>
                                         <div id="documentation">
-                                            <h6 >{sec.title}</h6>
-                                            <p >{sec.body}</p>
+                                            <div className="py-4">
+                                                <h6 >{sec.title}</h6>
+                                                <p >{sec.body}</p>
+                                            </div>
                                         </div>
                                     </Fragment>
                                 )

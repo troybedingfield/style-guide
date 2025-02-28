@@ -40,22 +40,22 @@ export default function Columns({
                                     return (
                                         <Fragment key={index}>
                                             {doc.title === "Bootstrap" &&
-                                                <>
+                                                <div className="py-4">
                                                     <h6>{doc.title}</h6>
                                                     <p >{doc.body}</p>
                                                     <a href="{{doc.link}}" target="_blank">{doc.link}</a>
-                                                </>
+                                                </div>
                                             }
                                             {doc.title === "Grid Breakpoints" &&
-                                                <>
+                                                <div className="py-4">
                                                     <h6>{doc.title}</h6>
                                                     <p >{doc.body}</p>
-                                                </>
+                                                </div>
                                             }
                                             {doc.title === "Columns" &&
-                                                <>
+                                                <div className="py-4">
                                                     <p >{doc.body}</p>
-                                                </>
+                                                </div>
                                             }
                                         </Fragment>
                                     )
@@ -345,10 +345,10 @@ export default function Columns({
                             return (
                                 <Fragment key={index}>
                                     {col.title === "Bootstrap Example" &&
-                                        <>
+                                        <div className="py-4">
                                             <h6>{col.title}</h6>
                                             <p>{col.body}</p>
-                                        </>
+                                        </div>
                                     }
                                 </Fragment>
                             )
@@ -468,16 +468,16 @@ export default function Columns({
                 <div id="documentation">
 
                     {columnsFilter.map(cols => {
-                        return cols.documentation.map(col => {
+                        return cols.documentation.map((col, index) => {
                             return (
-                                <>
+                                <Fragment key={index}>
                                     {col.title === "Bootstrap Example Mobile" &&
-                                        <>
+                                        <div className="py-4">
                                             <h6>{col.title}</h6>
                                             <p>{col.body}</p>
-                                        </>
+                                        </div>
                                     }
-                                </>
+                                </Fragment>
                             )
                         });
                     })}
@@ -632,16 +632,16 @@ export default function Columns({
 
 
                     {columnsFilter.map(cols => {
-                        return cols.documentation.map(col => {
+                        return cols.documentation.map((col, index) => {
                             return (
-                                <>
+                                <Fragment key={index}>
                                     {col.title === "Bootstrap Order Example" &&
-                                        <>
+                                        <div className="py-4">
                                             <h6>{col.title}</h6>
                                             <p>{col.body}</p>
-                                        </>
+                                        </div>
                                     }
-                                </>
+                                </Fragment>
                             )
                         });
                     })}
@@ -770,16 +770,16 @@ export default function Columns({
 
 
                     {columnsFilter.map(cols => {
-                        return cols.documentation.map(col => {
+                        return cols.documentation.map((col, index) => {
                             return (
-                                <>
+                                <Fragment key={index}>
                                     {col.title === "Bootstrap Order Example Mobile" &&
-                                        <>
+                                        <div className="py-4">
                                             <h6>{col.title}</h6>
                                             <p>{col.body}</p>
-                                        </>
+                                        </div>
                                     }
-                                </>
+                                </Fragment>
                             )
                         });
                     })}
@@ -916,8 +916,8 @@ export default function Columns({
 
 
 
-
-            {/* <div id="sectionContainer">
+            {/* REMOVE EVEYTHING UNDER THIS */}
+            {/* <div id="sectionContainer"> 
                 <div id="documentation">
 
                     <h6></h6>

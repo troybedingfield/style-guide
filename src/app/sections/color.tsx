@@ -50,8 +50,10 @@ export default function Color({
                                             <Fragment key={index}>
 
 
-                                                <h5>{sec.title}</h5>
-                                                <p >{sec.body}</p>
+                                                <div className="py-4">
+                                                    <h5>{sec.title}</h5>
+                                                    <p >{sec.body}</p>
+                                                </div>
 
 
                                             </Fragment>
@@ -62,10 +64,10 @@ export default function Color({
                                         return (
                                             <Fragment key={index}>
 
-
-                                                <h5>{sec.title}</h5>
-                                                <p style={{ whiteSpace: 'pre-line' }}>{sec.body}</p>
-
+                                                <div className="py-4">
+                                                    <h5>{sec.title}</h5>
+                                                    <p style={{ whiteSpace: 'pre-line' }}>{sec.body}</p>
+                                                </div>
 
                                             </Fragment>
                                         )
@@ -130,10 +132,10 @@ export default function Color({
 
                                         return (
                                             <Fragment key={index}>
-
-                                                <h5>{sec.title}</h5>
-                                                <p >{sec.body}</p>
-
+                                                <div className="py-4">
+                                                    <h5>{sec.title}</h5>
+                                                    <p >{sec.body}</p>
+                                                </div>
 
                                             </Fragment>
                                         )
@@ -199,10 +201,12 @@ export default function Color({
 
                                     return (
                                         <Fragment key={index}>
-                                            <div id="documentation">
+                                            <div id="documentation" >
+                                                <div className="py-4">
 
-                                                <h5>{sec.title}</h5>
-                                                <p >{sec.body}</p>
+                                                    <h5>{sec.title}</h5>
+                                                    <p >{sec.body}</p>
+                                                </div>
 
                                             </div>
                                         </Fragment>
@@ -270,10 +274,12 @@ export default function Color({
 
                                     return (
                                         <Fragment key={index}>
-                                            <div id="documentation">
+                                            <div id="documentation" >
 
-                                                <h5>{sec.title}</h5>
-                                                <p >{sec.body}</p>
+                                                <div className="py-4">
+                                                    <h5>{sec.title}</h5>
+                                                    <p >{sec.body}</p>
+                                                </div>
                                             </div>
 
                                         </Fragment>
@@ -340,10 +346,12 @@ export default function Color({
                                 if (sec.section === 'branding') {
                                     return (
                                         <Fragment key={index}>
-                                            <div id="documentation">
+                                            <div id="documentation" >
 
-                                                <h5>{sec.title}</h5>
-                                                <p >{sec.body}</p>
+                                                <div className="py-4">
+                                                    <h5>{sec.title}</h5>
+                                                    <p >{sec.body}</p>
+                                                </div>
                                             </div>
                                         </Fragment>
                                     )

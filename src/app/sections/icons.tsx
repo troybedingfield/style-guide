@@ -45,8 +45,10 @@ export default function Icons({
                                 section.documentation.map((doc, index) => {
                                     return (
                                         <Fragment key={index}>
-                                            <h6 >{doc.title}</h6>
-                                            <p >{doc.body}</p>
+                                            <div className="py-4">
+                                                <h6 >{doc.title}</h6>
+                                                <p >{doc.body}</p>
+                                            </div>
                                         </Fragment>
                                     )
                                 }
