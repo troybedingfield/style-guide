@@ -67,7 +67,7 @@ export default function Typography({
                                 return des.headlines.map((head, index) => {
                                     return (
                                         <Fragment key={index}>
-                                            <div className="header">
+                                            <div className="header py-4">
                                                 <div className="h-box">
                                                     {head.tag === 'h1' && <h1>{head.head}</h1>}
                                                     {head.tag === 'h2' && <h2>{head.head}</h2>}
@@ -122,19 +122,23 @@ export default function Typography({
 
                         {typographyFilter.map(des => {
                             return des.frequentlyused.map(head => {
-                                return head.section1.map((sec, index) => {
+                                return (
+                                    <div className="py-4">
+                                        {head.section1.map((sec, index) => {
 
-                                    return (
-                                        <Fragment key={index}>
-                                            {sec.type === "title" && <h5>{sec.body}</h5>}
-                                            {sec.type === "emphasis" && <h6>{sec.body}</h6>}
-                                            {sec.type === "grid" && <h6>{sec.body}</h6>}
-                                            {sec.type === "body" && <p>{sec.body}</p>}
-                                        </Fragment>
+                                            return (
+                                                <Fragment key={index}>
+                                                    {sec.type === "title" && <h5>{sec.body}</h5>}
+                                                    {sec.type === "emphasis" && <h6>{sec.body}</h6>}
+                                                    {sec.type === "grid" && <h6>{sec.body}</h6>}
+                                                    {sec.type === "body" && <p>{sec.body}</p>}
+                                                </Fragment>
 
-                                    )
+                                            )
 
-                                })
+                                        })}
+                                    </div>
+                                )
 
 
 
@@ -154,22 +158,26 @@ export default function Typography({
 
                         {typographyFilter.map(des => {
                             return des.frequentlyused.map(head => {
-                                return head.section2.map((sec, index) => {
+                                return (
+                                    <div className="py-4">
+                                        {head.section2.map((sec, index) => {
 
-                                    return (
-                                        <Fragment key={index}>
-
-
-                                            <h3>{sec.title}</h3>
-                                            <h5>{sec.header}</h5>
-                                            <p>{sec.body}</p>
+                                            return (
+                                                <Fragment key={index}>
 
 
-                                        </Fragment>
+                                                    <h3>{sec.title}</h3>
+                                                    <h5>{sec.header}</h5>
+                                                    <p>{sec.body}</p>
 
-                                    )
 
-                                })
+                                                </Fragment>
+
+                                            )
+
+                                        })}
+                                    </div>
+                                )
 
 
 

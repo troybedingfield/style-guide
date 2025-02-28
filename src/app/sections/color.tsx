@@ -49,8 +49,8 @@ export default function Color({
                                         return (
                                             <Fragment key={index}>
 
-                                                <h5>{sec.section}</h5>
-                                                <h6>{sec.title}</h6>
+
+                                                <h5>{sec.title}</h5>
                                                 <p >{sec.body}</p>
 
 
@@ -62,8 +62,8 @@ export default function Color({
                                         return (
                                             <Fragment key={index}>
 
-                                                <h5>{sec.section}</h5>
-                                                <h6>{sec.title}</h6>
+
+                                                <h5>{sec.title}</h5>
                                                 <p style={{ whiteSpace: 'pre-line' }}>{sec.body}</p>
 
 
@@ -91,7 +91,7 @@ export default function Color({
 
 
 
-                                                <div className="color">
+                                                <div className="color py-4">
                                                     <div className={`color-box bg ${color.class}`}></div>
                                                     <div className="color-text">
                                                         <h4 >{color.hexcode}</h4>
@@ -130,8 +130,8 @@ export default function Color({
 
                                         return (
                                             <Fragment key={index}>
-                                                <h5>{sec.section}</h5>
-                                                <h6>{sec.title}</h6>
+
+                                                <h5>{sec.title}</h5>
                                                 <p >{sec.body}</p>
 
 
@@ -159,7 +159,7 @@ export default function Color({
 
 
 
-                                                <div className="color">
+                                                <div className="color py-4">
                                                     <div className={`color-box bg ${color.class}`}></div>
                                                     <div className="color-text">
                                                         <h4 >{color.hexcode}</h4>
@@ -200,8 +200,8 @@ export default function Color({
                                     return (
                                         <Fragment key={index}>
                                             <div id="documentation">
-                                                <h5>{sec.section}</h5>
-                                                <h6>{sec.title}</h6>
+
+                                                <h5>{sec.title}</h5>
                                                 <p >{sec.body}</p>
 
                                             </div>
@@ -229,7 +229,7 @@ export default function Color({
 
 
 
-                                                <div className="color">
+                                                <div className="color py-4">
                                                     <div className={`color-box bg ${color.class}`}></div>
                                                     <div className="color-text">
                                                         <h4 >{color.hexcode}</h4>
@@ -271,8 +271,8 @@ export default function Color({
                                     return (
                                         <Fragment key={index}>
                                             <div id="documentation">
-                                                <h5>{sec.section}</h5>
-                                                <h6>{sec.title}</h6>
+
+                                                <h5>{sec.title}</h5>
                                                 <p >{sec.body}</p>
                                             </div>
 
@@ -300,7 +300,7 @@ export default function Color({
 
 
 
-                                                <div className="color">
+                                                <div className="color py-4">
                                                     <div className={`color-box bg ${color.class}`}></div>
                                                     <div className="color-text">
                                                         <h4 >{color.hexcode}</h4>
@@ -341,8 +341,8 @@ export default function Color({
                                     return (
                                         <Fragment key={index}>
                                             <div id="documentation">
-                                                <h5>{sec.section}</h5>
-                                                <h6>{sec.title}</h6>
+
+                                                <h5>{sec.title}</h5>
                                                 <p >{sec.body}</p>
                                             </div>
                                         </Fragment>
@@ -364,7 +364,7 @@ export default function Color({
 
 
 
-                                                <div className="color">
+                                                <div className="color py-4">
                                                     <div className={`color-box bg ${color.class}`}></div>
                                                     <div className="color-text">
                                                         <h4 >{color.hexcode}</h4>
