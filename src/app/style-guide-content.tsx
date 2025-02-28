@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Color from "./sections/color";
 import Columns from "./sections/columns";
 import Icons from "./sections/icons";

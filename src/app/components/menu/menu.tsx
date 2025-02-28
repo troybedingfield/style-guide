@@ -50,7 +50,7 @@ export default function Menu() {
                     </div>
                 </div>
                 <nav>
-                    {menuData.map((menu: any, index: number) => {
+                    {menuData.map((menu, index) => {
                         return <Link key={index} id="menuItem" href={menu.link} className={menu.name === activeId ? "column active" : ''}>{menu.name}</Link>
                     })}
                 </nav>

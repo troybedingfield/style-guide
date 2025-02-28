@@ -240,7 +240,7 @@ export default function Icons({
                                                     <p className="smallCopy">HTML:</p>
                                                     <pre>{icon.code1}</pre>
                                                     <p className="smallCopy">CSS:</p>
-                                                    <pre>content:"{icon.code2}";</pre>
+                                                    <pre>{`content:"${icon.code2}";`}</pre>
                                                 </div>
                                             )
 

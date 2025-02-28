@@ -121,9 +121,9 @@ export default function Typography({
                     <div id="typography-inner" className="main-content">
 
                         {typographyFilter.map(des => {
-                            return des.frequentlyused.map(head => {
+                            return des.frequentlyused.map((head, index) => {
                                 return (
-                                    <div className="py-4">
+                                    <div key={index} className="py-4">
                                         {head.section1.map((sec, index) => {
 
                                             return (
@@ -157,9 +157,9 @@ export default function Typography({
                     <div id="typography-inner" className="main-content">
 
                         {typographyFilter.map(des => {
-                            return des.frequentlyused.map(head => {
+                            return des.frequentlyused.map((head, index) => {
                                 return (
-                                    <div className="py-4">
+                                    <div key={index} className="py-4">
                                         {head.section2.map((sec, index) => {
 
                                             return (

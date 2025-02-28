@@ -1,4 +1,4 @@
-type ColorData = {
+type colorData = {
     title: string;
     containerhide: [{
         section: string;

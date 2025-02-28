@@ -1,4 +1,4 @@
-type TypographyData = {
+type typographyData = {
     title: string;
     containerhide: [{
         section: string;

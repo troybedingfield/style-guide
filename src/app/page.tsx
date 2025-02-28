@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Menu from "./components/menu/menu";
 import StyleGuideCotent from "./style-guide-content";
 import { Suspense } from "react";
@@ -10,8 +9,8 @@ export default async function HomePage(props: {
   }>
 }) {
   const searchParams = await props.searchParams;
-  const query = searchParams?.query || '';
-  const currentPage = Number(searchParams?.page) || 1;
+  const query = searchParams?.query ?? '';
+  const currentPage = Number(searchParams?.page) ?? 1;
   return (
     <div id="container">
       <div id="nav-container">

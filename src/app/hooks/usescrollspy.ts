@@ -1,8 +1,8 @@
 'use client'
 import { useLayoutEffect, useState } from "react";
 
-const capitalize = (text: string) =>
-    text.charAt(0).toUpperCase() + text.substr(1);
+// const capitalize = (text: string) =>
+//     text.charAt(0).toUpperCase() + text.substr(1);
 
 const clamp = (value: number) => Math.max(0, value);
 
@@ -10,7 +10,7 @@ const isBetween = (value: number, floor: number, ceil: number) =>
     value >= floor && value <= ceil;
 
 // hooks
-export const useScrollspy = (ids: string[], offset: number = 0) => {
+export const useScrollspy = (ids: string[], offset = 0) => {
     const [activeId, setActiveId] = useState("");
 
     useLayoutEffect(() => {
@@ -31,7 +31,7 @@ export const useScrollspy = (ids: string[], offset: number = 0) => {
                 })
                 .find(({ top, bottom }) => isBetween(scroll, top, bottom));
 
-            setActiveId(position?.id || "");
+            setActiveId(position?.id ?? "");
         };
 
         listener();
