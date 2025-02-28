@@ -89,7 +89,7 @@ export default function Icons({
 
                         <div className="mostUsed">
 
-                            <div className="icon-wrap flex flex-row gap-4">
+                            <div className="icon-wrap flex !flex-row gap-4">
                                 {iconsFilter.map(section => {
                                     return (
                                         section.newicons.map(newicons => {
@@ -191,8 +191,8 @@ export default function Icons({
                                                     outlie.icons.map((icon, index) => {
                                                         return (
                                                             <Fragment key={index}>
-                                                                <div className="flex flex-col align-items-center">
-                                                                    <i className={icon.icon + ' ' + icon.class}></i>
+                                                                <div className="flex flex-col !align-items-center">
+                                                                    <div className="mx-auto"><i className={icon.icon + ' ' + icon.class}></i></div>
                                                                     <span>{icon.name}</span>
                                                                 </div>
                                                             </Fragment>

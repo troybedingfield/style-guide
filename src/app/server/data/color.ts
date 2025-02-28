@@ -190,7 +190,7 @@ export const colorData = [
             },
             {
                 id: 36,
-                hexcode: '#30B8DC',
+                hexcode: '#6648E5',
                 class: 'blueberry',
                 color: 'blueberry',
                 use: '',

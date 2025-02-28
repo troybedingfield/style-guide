@@ -68,7 +68,7 @@ export const iconsData = [
                 id: 1,
                 icon: 'icon-edit',
                 name: 'Edit',
-                code1: '<i icon="icon-edit"></i>',
+                code1: '<i className="icon-edit"></i>',
                 code2: '\\e900',
                 meta: "icons"
             },
@@ -76,7 +76,7 @@ export const iconsData = [
                 id: 2,
                 icon: 'icon-edit-b',
                 name: 'Edit',
-                code1: '<i icon="icon-edit"></i>',
+                code1: '<i className="icon-edit"></i>',
                 code2: '\\e901',
                 meta: "icons"
             },
