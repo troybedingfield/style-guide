@@ -482,7 +482,7 @@ export const colorData = [
             // {title: "Description", body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias enim quibusdam, minima fugiat sit minus tempore recusandae eveniet earum qui, at quidem corporis est dolorem molestiae necessitatibus quisquam, sunt cumque!"},
         ],
         sections: [
-            { section: "primary", title: "Core and Informational Color", body: "Use when communicating a primary, secondary or conditional state. These are used on buttons, links, status badges and charts.", example: "", meta: "colors" },
+            { section: "primary", title: "Core and Informational Color", body: "Use when communicating a primary, secondary or conditional state. These are used on buttons, links, status badges and charts.", example: "", meta: "colors color Colors Color core" },
             { section: "example", title: "For Example", body: "Red = Taxes\nYellow = Deductions\nBlue = Benefits\nGreen = Earnings", example: "", meta: "colors" },
             { section: "secondary", title: "Secondary Colors", body: "These are used in the navigation system", example: "", meta: "colors" },
             { section: "support", title: "Support Colors", body: "Use in background and grid headers", example: "", meta: "colors" },
@@ -492,6 +492,6 @@ export const colorData = [
         spacer: [
             { type: 'spacer' }
         ],
-        meta: "color"
+        meta: "color Colors colors Color"
     }
 ]
