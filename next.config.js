@@ -7,6 +7,7 @@ import "./src/env.js";
 /** @type {import("next").NextConfig} */
 const config = {
     output: "export",
+    basePath: '/style-guide',
 };
 
 export default config;
