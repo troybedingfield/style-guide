@@ -5,10 +5,6 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {
-    basePath: '/style-guide',
-    assetPrefix: '/style-guide/',
-    output: "export",
-};
+const config = {};
 
 export default config;
