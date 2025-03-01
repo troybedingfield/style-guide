@@ -20,6 +20,7 @@ export default async function HomePage(
         <Menu />
 
       </div>
+
       <div className="main-content-area">
         <div className="p-4">
           {/* <Suspense key={query + currentPage} fallback={'Searching...'}> */}
