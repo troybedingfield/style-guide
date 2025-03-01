@@ -40,7 +40,7 @@ export default function Color(
 
 
 
-            {/* {colorD.map((title, index) => {
+            {/* {colorFilter.map((title, index) => {
                 return (
                     <Fragment key={index}>
                         <div id="section-head" className="py-4">
@@ -180,7 +180,7 @@ export default function Color(
                         ))}
 
 
-                        {/* {colorD.map(section => {
+                        {/* {colorFilter.map(section => {
                             return (
                                 section.sections.map((sec, index) => {
                                     if (sec.section === 'primary') {
@@ -221,7 +221,7 @@ export default function Color(
                     <div id="colors">
                         <div className="color-container">
 
-                            {/* {colorD.map(section => {
+                            {/* {colorFilter.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'primary') {
                                         return (
@@ -923,7 +923,7 @@ export default function Color(
 
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {/* {colorD.map(section => {
+                        {/* {colorFilter.map(section => {
                             return (
                                 section.sections.map((sec, index) => {
                                     if (sec.section === 'secondary') {
@@ -998,7 +998,7 @@ export default function Color(
 
                         <div className="color-container">
 
-                            {/* {colorD.map(section => {
+                            {/* {colorFilter.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'secondary') {
                                         return (
@@ -1712,7 +1712,7 @@ export default function Color(
 
                 <div id="sectionContainer" className="flex">
 
-                    {/* {colorD.map(section => {
+                    {/* {colorFilter.map(section => {
                         return (
                             section.sections.map((sec, index) => {
                                 if (sec.section === 'support') {
@@ -1792,7 +1792,7 @@ export default function Color(
 
                         <div className="color-container">
 
-                            {colorD.map(section => {
+                            {colorFilter.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'support') {
                                         return (
@@ -1835,7 +1835,7 @@ export default function Color(
 
                 <div id="sectionContainer" className="flex">
 
-                    {colorD.map(section => {
+                    {colorFilter.map(section => {
                         return (
                             section.sections.map((sec, index) => {
                                 if (sec.section === 'neutrals') {
@@ -1865,7 +1865,7 @@ export default function Color(
 
                         <div className="color-container">
 
-                            {colorD.map(section => {
+                            {colorFilter.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'neutrals') {
                                         return (
@@ -1908,7 +1908,7 @@ export default function Color(
 
                 <div id="sectionContainer" className="flex">
 
-                    {colorD.map(section => {
+                    {colorFilter.map(section => {
                         return (
                             section.sections.map((sec, index) => {
                                 if (sec.section === 'branding') {
@@ -1932,7 +1932,7 @@ export default function Color(
 
                     <div id="colors" className="main-content">
                         <div className="color-container">
-                            {colorD.map(section => {
+                            {colorFilter.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'branding') {
                                         return (
