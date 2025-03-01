@@ -1,6 +1,7 @@
 'use client';
 import "./search.scss"
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { Suspense } from "react";
 import { useDebouncedCallback } from 'use-debounce';
 
 export default function Search({ placeholder }: { placeholder: string }) {
@@ -19,19 +20,29 @@ export default function Search({ placeholder }: { placeholder: string }) {
         router.replace(`${pathname}?${params.toString()}`);
     }, 300);
 
+    function SearchBarFallback() {
+        return <>placeholder</>
+    }
+
     return (
-        <div className="head-search relative flex flex-1 flex-shrink-0 p-1">
-            <label htmlFor="search" className="sr-only">
-                Search
-            </label>
-            <input
-                className="searchfield peer block w-full rounded-md border border-gray-200 py-[2px] pl-2 text-sm placeholder:text-gray-500"
-                placeholder={placeholder}
-                onChange={(e) => {
-                    handleSearch(e.target.value);
-                }}
-                defaultValue={searchParams.get('query')?.toString()}
-            />
-        </div>
+
+
+
+        <Suspense fallback={<SearchBarFallback />}>
+            <div className="head-search relative flex flex-1 flex-shrink-0 p-1">
+                <label htmlFor="search" className="sr-only">
+                    Search
+                </label>
+                <input
+                    className="searchfield peer block w-full rounded-md border border-gray-200 py-[2px] pl-2 text-sm placeholder:text-gray-500"
+                    placeholder={placeholder}
+                    onChange={(e) => {
+                        handleSearch(e.target.value);
+                    }}
+                    defaultValue={searchParams.get('query')?.toString()}
+                />
+            </div>
+        </Suspense>
+
     );
 }

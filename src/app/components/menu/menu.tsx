@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useScrollspy } from "~/app/hooks/usescrollspy";
 import { menuData } from "~/app/server/data/menu";
 import Search from "../search/search";
+import { Suspense } from "react";
 
 
 export default function Menu() {
@@ -12,7 +13,9 @@ export default function Menu() {
         return id.name;
     });
     const activeId = useScrollspy(ids, 64); // 54 is navigation height
-
+    function SearchBarFallback() {
+        return <>placeholder</>
+    }
 
     return (
         <>
@@ -36,7 +39,9 @@ export default function Menu() {
                             />
 
                         </form> */}
-                        <Search placeholder={"Search..."} />
+                        {/* <Suspense fallback={<SearchBarFallback />}>
+                            <Search placeholder={"Search..."} />
+                        </Suspense> */}
                         <div id="desktop-clear" className="hide">
                             <div
                                 id="closeIconDesktop"

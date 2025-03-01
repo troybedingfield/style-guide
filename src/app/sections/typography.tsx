@@ -2,22 +2,24 @@ import "./styles/typography.scss"
 import { typographyData } from "../server/data/typography";
 import { Fragment } from "react";
 
-export default function Typography({
-    query,
-    currentPage,
-}: {
-    query: string;
-    currentPage: number;
-}) {
+export default function Typography(
+    //     {
+    //     // query,
+    //     // currentPage,
+    // }: {
+    //         // query: string;
+    //         // currentPage: number;
+    //     }
+) {
 
     const typographyD = typographyData;
-    const typographyFilter = typographyD.filter(typo => [query].every(e => typo.meta.includes(e)))
+    // const typographyFilter = typographyD.filter(typo => [query].every(e => typo.meta.includes(e)))
     return (
         <div id="typography">
 
 
 
-            {typographyFilter.map((title, index) => {
+            {typographyD.map((title, index) => {
                 return (
                     <Fragment key={index}>
                         <div id="section-head" className="py-4">
@@ -37,7 +39,7 @@ export default function Typography({
                 <div id="sectionContainer">
                     <div id="documentation">
 
-                        {typographyFilter.map(des => {
+                        {typographyD.map(des => {
                             return des.documentation.map((doc, index) => {
                                 return (
                                     <Fragment key={index}>
@@ -49,7 +51,7 @@ export default function Typography({
                             });
                         })}
 
-                        {typographyFilter.map(des => {
+                        {typographyD.map(des => {
                             return des.sections.map((sec, index) => {
                                 if (sec.section === 'allheights') {
 
@@ -67,7 +69,7 @@ export default function Typography({
                     </div>
                     <div id="typography-inner" className="main-content">
                         <div className="headers-container">
-                            {typographyFilter.map(des => {
+                            {typographyD.map(des => {
                                 return des.headlines.map((head, index) => {
                                     return (
                                         <Fragment key={index}>
@@ -106,7 +108,7 @@ export default function Typography({
                 <div id="sectionContainer">
 
 
-                    {typographyFilter.map(des => {
+                    {typographyD.map(des => {
                         return des.sections.map((sec, index) => {
                             if (sec.section === 'frequentlyused') {
 
@@ -126,7 +128,7 @@ export default function Typography({
 
                     <div id="typography-inner" className="main-content">
 
-                        {typographyFilter.map(des => {
+                        {typographyD.map(des => {
                             return des.frequentlyused.map((head, index) => {
                                 return (
                                     <div key={index} className="py-4">
@@ -162,7 +164,7 @@ export default function Typography({
                     </div>
                     <div id="typography-inner" className="main-content">
 
-                        {typographyFilter.map(des => {
+                        {typographyD.map(des => {
                             return des.frequentlyused.map((head, index) => {
                                 return (
                                     <div key={index} className="py-4">
@@ -202,7 +204,7 @@ export default function Typography({
                     </div>
                     <div id="typography-inner" className="main-content">
 
-                        {typographyFilter.map(des => {
+                        {typographyD.map(des => {
                             return des.frequentlyused.map((two, index) => {
 
 
@@ -221,7 +223,7 @@ export default function Typography({
                             });
                         })}
                         <div className="container grid grid-cols-12 gap-4">
-                            {typographyFilter.map(des => {
+                            {typographyD.map(des => {
                                 return des.twocolumns.map((two, index) => {
 
 

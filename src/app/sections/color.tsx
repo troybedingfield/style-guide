@@ -1,5 +1,5 @@
 'use client'
-import { Fragment } from "react";
+import { Fragment, RefObject, useRef } from "react";
 import { colorData } from "../server/data/color"
 import "./styles/color.scss"
 import useHighlightSearch from "../hooks/useHighlight";
@@ -7,27 +7,29 @@ import useHighlightSearch from "../hooks/useHighlight";
 
 
 
-export default function Color({
-    query,
-    currentPage,
-}: {
-    query: string;
-    currentPage: number;
-}) {
+export default function Color(
+    //     {
+    //     // query,
+    //     // currentPage,
+    // }: {
+    //         // query: string;
+    //         // currentPage: number;
+    //     }
+) {
     const colorD = colorData;
-    const colorSections = colorData[0]?.sections;
-    const colorColors = colorData[0]?.colors;
-    const colorFilter = colorD.filter(color => [query].every(e => color.meta.includes(e)))
+    // const colorSections = colorData[0]?.sections;
+    // const colorColors = colorData[0]?.colors;
+    // const colorFilter = colorD.filter(color => [query].every(e => color.meta.includes(e)))
 
-    const highlightedTitle = useHighlightSearch(colorData, query, 'title');
+    // const highlightedTitle = useHighlightSearch(colorData, query, 'title');
 
-    const highlightedSectionsTitle = useHighlightSearch(colorSections, query, 'title');
-    const highlightedSectionsBody = useHighlightSearch(colorSections, query, 'body');
+    // const highlightedSectionsTitle = useHighlightSearch(colorSections, query, 'title');
+    // const highlightedSectionsBody = useHighlightSearch(colorSections, query, 'body');
 
-    const highlightedColorsClass = useHighlightSearch(colorColors, query, 'class');
-    const highlightedColorsHex = useHighlightSearch(colorColors, query, 'hexcode');
-    const highlightedColorsColor = useHighlightSearch(colorColors, query, 'color');
-    const highlightedColorsUse = useHighlightSearch(colorColors, query, 'use');
+    // const highlightedColorsClass = useHighlightSearch(colorColors, query, 'class');
+    // const highlightedColorsHex = useHighlightSearch(colorColors, query, 'hexcode');
+    // const highlightedColorsColor = useHighlightSearch(colorColors, query, 'color');
+    // const highlightedColorsUse = useHighlightSearch(colorColors, query, 'use');
 
     return (
         <div id="color">
@@ -38,7 +40,7 @@ export default function Color({
 
 
 
-            {/* {colorFilter.map((title, index) => {
+            {colorD.map((title, index) => {
                 return (
                     <Fragment key={index}>
                         <div id="section-head" className="py-4">
@@ -48,10 +50,10 @@ export default function Color({
                         </div>
                     </Fragment>
                 );
-            })} */}
+            })}
 
 
-            {highlightedTitle.map((item, index) => (
+            {/* {highlightedTitle.map((item, index) => (
                 <div id="section-head" key={index} className="py-4">
                     <h3>
                         {item.parts.map((part, partIndex) => (
@@ -65,7 +67,7 @@ export default function Color({
                     </h3>
                     <hr />
                 </div>
-            ))}
+            ))} */}
 
 
 
@@ -82,7 +84,7 @@ export default function Color({
                     <div id="documentation">
 
 
-                        {highlightedSectionsTitle.map((item, index) => (
+                        {/* {highlightedSectionsTitle.map((item, index) => (
                             <Fragment key={index}>
 
                                 <h5>
@@ -175,10 +177,10 @@ export default function Color({
                                     })}
                                 </p>
                             </Fragment>
-                        ))}
+                        ))} */}
 
 
-                        {/* {colorFilter.map(section => {
+                        {colorD.map(section => {
                             return (
                                 section.sections.map((sec, index) => {
                                     if (sec.section === 'primary') {
@@ -213,13 +215,13 @@ export default function Color({
                                 }
                                 )
                             )
-                        })} */}
+                        })}
                     </div>
 
+                    <div id="colors">
+                        <div className="color-container">
 
-
-                    <div id="colors" className="main-content">
-                        {/* {colorFilter.map(section => {
+                            {colorD.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'primary') {
                                         return (
@@ -244,9 +246,10 @@ export default function Color({
                                     }
                                 })
                                 )
-                            })} */}
+                            })}
 
-                        <div className="color-container">
+
+                            {/* <div className="color-container">
                             <div className="color">
                                 {highlightedColorsClass.map((item, index) => (
                                     <Fragment key={index}>
@@ -912,13 +915,15 @@ export default function Color({
 
 
 
+                        </div> */}
+
                         </div>
                     </div>
                 </div>
 
                 <div id="sectionContainer" className="flex">
                     <div id="documentation">
-                        {/* {colorFilter.map(section => {
+                        {colorD.map(section => {
                             return (
                                 section.sections.map((sec, index) => {
                                     if (sec.section === 'secondary') {
@@ -936,9 +941,9 @@ export default function Color({
                                 }
                                 )
                             )
-                        })} */}
+                        })}
 
-                        {highlightedSectionsTitle.map((item, index) => (
+                        {/* {highlightedSectionsTitle.map((item, index) => (
                             <Fragment key={index}>
 
                                 <h5>
@@ -983,7 +988,7 @@ export default function Color({
                                     })}
                                 </p>
                             </Fragment>
-                        ))}
+                        ))} */}
 
                     </div>
 
@@ -991,9 +996,9 @@ export default function Color({
                     <div id="colors" className="main-content">
 
 
-                        {/* <div className="color-container">
+                        <div className="color-container">
 
-                            {colorFilter.map(section => {
+                            {colorD.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'secondary') {
                                         return (
@@ -1022,10 +1027,10 @@ export default function Color({
                                 )
                             })}
 
-                        </div> */}
+                        </div>
 
                         <div className="color-container">
-                            <div className="color">
+                            {/* <div className="color">
                                 {highlightedColorsClass.map((item, index) => (
                                     <Fragment key={index}>
 
@@ -1607,86 +1612,86 @@ export default function Color({
                             </div>
 
 
-                            <div className="color">
-                                {highlightedColorsClass.map((item, index) => (
-                                    <Fragment key={index}>
+
+                            {highlightedColorsClass.map((item, index) => (
+                                <Fragment key={index}>
+
+                                    {item.parts.map((part, partIndex) => {
+                                        if (index === 15) {
+                                            return (
+                                                <div key={partIndex} className={`color-box bg ${part.text}`}></div>
+                                                // <span
+                                                //     key={partIndex}
+                                                //     style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
+                                                // >
+                                                //     {part.text}
+                                                // </span>
+                                            )
+                                        }
+                                    })}
+                                </Fragment>
+
+                            ))}
+                            <div className="color-text">
+                                {highlightedColorsHex.map((item, index) => (
+                                    <h4 key={index}>
 
                                         {item.parts.map((part, partIndex) => {
                                             if (index === 15) {
                                                 return (
-                                                    <div key={partIndex} className={`color-box bg ${part.text}`}></div>
-                                                    // <span
-                                                    //     key={partIndex}
-                                                    //     style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
-                                                    // >
-                                                    //     {part.text}
-                                                    // </span>
+
+                                                    <span
+                                                        key={partIndex}
+                                                        style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
+                                                    >
+                                                        {part.text}
+                                                    </span>
                                                 )
                                             }
                                         })}
-                                    </Fragment>
+                                    </h4>
 
                                 ))}
-                                <div className="color-text">
-                                    {highlightedColorsHex.map((item, index) => (
-                                        <h4 key={index}>
+                                {highlightedColorsColor.map((item, index) => (
+                                    <h6 key={index}>
 
-                                            {item.parts.map((part, partIndex) => {
-                                                if (index === 15) {
-                                                    return (
+                                        {item.parts.map((part, partIndex) => {
+                                            if (index === 15) {
+                                                return (
 
-                                                        <span
-                                                            key={partIndex}
-                                                            style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
-                                                        >
-                                                            {part.text}
-                                                        </span>
-                                                    )
-                                                }
-                                            })}
-                                        </h4>
+                                                    <span
+                                                        key={partIndex}
+                                                        style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
+                                                    >
+                                                        {part.text}
+                                                    </span>
+                                                )
+                                            }
+                                        })}
+                                    </h6>
 
-                                    ))}
-                                    {highlightedColorsColor.map((item, index) => (
-                                        <h6 key={index}>
+                                ))}
+                                {highlightedColorsUse.map((item, index) => (
+                                    <p key={index}>
 
-                                            {item.parts.map((part, partIndex) => {
-                                                if (index === 15) {
-                                                    return (
+                                        {item.parts.map((part, partIndex) => {
+                                            if (index === 15) {
+                                                return (
 
-                                                        <span
-                                                            key={partIndex}
-                                                            style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
-                                                        >
-                                                            {part.text}
-                                                        </span>
-                                                    )
-                                                }
-                                            })}
-                                        </h6>
+                                                    <span
+                                                        key={partIndex}
+                                                        style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
+                                                    >
+                                                        {part.text}
+                                                    </span>
+                                                )
+                                            }
+                                        })}
+                                    </p>
 
-                                    ))}
-                                    {highlightedColorsUse.map((item, index) => (
-                                        <p key={index}>
+                                ))}
+                            </div> */}
 
-                                            {item.parts.map((part, partIndex) => {
-                                                if (index === 15) {
-                                                    return (
-
-                                                        <span
-                                                            key={partIndex}
-                                                            style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent', whiteSpace: 'pre-line' }}
-                                                        >
-                                                            {part.text}
-                                                        </span>
-                                                    )
-                                                }
-                                            })}
-                                        </p>
-
-                                    ))}
-                                </div>
-                            </div>
 
 
 
@@ -1707,7 +1712,7 @@ export default function Color({
 
                 <div id="sectionContainer" className="flex">
 
-                    {/* {colorFilter.map(section => {
+                    {/* {colorD.map(section => {
                         return (
                             section.sections.map((sec, index) => {
                                 if (sec.section === 'support') {
@@ -1731,7 +1736,7 @@ export default function Color({
                     })} */}
                     <div id="documentation" >
 
-                        {highlightedSectionsTitle.map((item, index) => (
+                        {/* {highlightedSectionsTitle.map((item, index) => (
                             <Fragment key={index}>
 
                                 <h5>
@@ -1777,7 +1782,7 @@ export default function Color({
                                     })}
                                 </p>
                             </Fragment>
-                        ))}
+                        ))} */}
 
                     </div>
 
@@ -1787,7 +1792,7 @@ export default function Color({
 
                         <div className="color-container">
 
-                            {colorFilter.map(section => {
+                            {colorD.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'support') {
                                         return (
@@ -1830,7 +1835,7 @@ export default function Color({
 
                 <div id="sectionContainer" className="flex">
 
-                    {colorFilter.map(section => {
+                    {colorD.map(section => {
                         return (
                             section.sections.map((sec, index) => {
                                 if (sec.section === 'neutrals') {
@@ -1860,7 +1865,7 @@ export default function Color({
 
                         <div className="color-container">
 
-                            {colorFilter.map(section => {
+                            {colorD.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'neutrals') {
                                         return (
@@ -1903,7 +1908,7 @@ export default function Color({
 
                 <div id="sectionContainer" className="flex">
 
-                    {colorFilter.map(section => {
+                    {colorD.map(section => {
                         return (
                             section.sections.map((sec, index) => {
                                 if (sec.section === 'branding') {
@@ -1927,7 +1932,7 @@ export default function Color({
 
                     <div id="colors" className="main-content">
                         <div className="color-container">
-                            {colorFilter.map(section => {
+                            {colorD.map(section => {
                                 return (section.colors.map((color, index) => {
                                     if (color.type === 'branding') {
                                         return (
@@ -1974,7 +1979,7 @@ export default function Color({
             </div>
 
 
-        </div>
+        </div >
 
     )
 }
