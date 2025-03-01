@@ -3,23 +3,23 @@ import { iconsData } from "../server/data/icons";
 import './styles/icons.scss'
 
 export default function Icons(
-    //     {
-    //     // query,
-    //     // currentPage,
-    // }: {
-    //         // query: string;
-    //         // currentPage: number;
-    //     }
+    {
+        query,
+        currentPage,
+    }: {
+        query: string;
+        currentPage: number;
+    }
 ) {
     const iconsD = iconsData;
-    // const iconsFilter = iconsD.filter(ico => [query].every(e => ico.meta.includes(e)))
+    const iconsFilter = iconsD.filter(ico => [query].every(e => ico.meta.includes(e)))
     return (
         <div id="icons">
 
 
 
 
-            {iconsD.map((title, index) => {
+            {iconsFilter.map((title, index) => {
                 return (
                     <Fragment key={index}>
                         <div id="section-head" className="py-4">
@@ -42,7 +42,7 @@ export default function Icons(
 
 
 
-                        {iconsD.map(section => {
+                        {iconsFilter.map(section => {
                             return (
                                 section.documentation.map((doc, index) => {
                                     return (
@@ -73,7 +73,7 @@ export default function Icons(
 
 
 
-                        {iconsD.map(section => {
+                        {iconsFilter.map(section => {
                             return (
                                 section.newicons.map(newicons => {
                                     return (
@@ -92,7 +92,7 @@ export default function Icons(
                         <div className="mostUsed">
 
                             <div className="icon-wrap flex !flex-row gap-4">
-                                {iconsD.map(section => {
+                                {iconsFilter.map(section => {
                                     return (
                                         section.newicons.map(newicons => {
                                             return (
@@ -120,7 +120,7 @@ export default function Icons(
 
 
 
-                        {iconsD.map(section => {
+                        {iconsFilter.map(section => {
                             return (
                                 section.mostused.map(most => {
                                     return (
@@ -137,7 +137,7 @@ export default function Icons(
 
 
                             <div className="icon-wrap flex">
-                                {iconsD.map(section => {
+                                {iconsFilter.map(section => {
                                     return (
                                         section.mostused.map(most => {
                                             return (
@@ -163,7 +163,7 @@ export default function Icons(
 
 
                         <section>
-                            {iconsD.map(section => {
+                            {iconsFilter.map(section => {
                                 return (
                                     section.outliers.map(outlie => {
                                         return (
@@ -186,7 +186,7 @@ export default function Icons(
                             <div className="mostUsed">
 
                                 <div className="icon-wrap flex">
-                                    {iconsD.map(section => {
+                                    {iconsFilter.map(section => {
                                         return (
                                             section.outliers.map(outlie => {
                                                 return (
@@ -220,7 +220,7 @@ export default function Icons(
 
                         <section>
 
-                            {iconsD.map((section, index) => {
+                            {iconsFilter.map((section, index) => {
                                 return (
 
                                     <h4 key={index}>{section.allicons}</h4>
@@ -234,7 +234,7 @@ export default function Icons(
 
                             <div  >
 
-                                {iconsD.map(section => {
+                                {iconsFilter.map(section => {
                                     return (
                                         section.icons.map(icon => {
                                             return (

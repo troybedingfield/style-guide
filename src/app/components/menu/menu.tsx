@@ -13,9 +13,9 @@ export default function Menu() {
         return id.name;
     });
     const activeId = useScrollspy(ids, 64); // 54 is navigation height
-    function SearchBarFallback() {
-        return <>placeholder</>
-    }
+    // function SearchBarFallback() {
+    //     return <>placeholder</>
+    // }
 
     return (
         <>
@@ -39,9 +39,9 @@ export default function Menu() {
                             />
 
                         </form> */}
-                        {/* <Suspense fallback={<SearchBarFallback />}>
-                            <Search placeholder={"Search..."} />
-                        </Suspense> */}
+
+                        <Search placeholder={"Search..."} />
+
                         <div id="desktop-clear" className="hide">
                             <div
                                 id="closeIconDesktop"

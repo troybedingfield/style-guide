@@ -3,23 +3,23 @@ import { columnsData } from "../server/data/columns";
 import './styles/columns.scss'
 
 export default function Columns(
-    //     {
-    //     // query,
-    //     // currentPage,
-    // }: {
-    //         // query: string;
-    //         // currentPage: number;
-    //     }
+    {
+        query,
+        currentPage,
+    }: {
+        query: string;
+        currentPage: number;
+    }
 ) {
     const columnsD = columnsData;
-    // const columnsFilter = columnsD.filter(column => [query].every(e => column.meta.includes(e)))
+    const columnsFilter = columnsD.filter(column => [query].every(e => column.meta.includes(e)))
     return (
         <div id="columns">
 
 
 
 
-            {columnsD.map((title, index) => {
+            {columnsFilter.map((title, index) => {
                 return (
                     <Fragment key={index}>
                         <div id="section-head" className="py-4">
@@ -36,7 +36,7 @@ export default function Columns(
                 <div id="sectionContainer">
 
                     <div id="documentation">
-                        {columnsD.map(docs => {
+                        {columnsFilter.map(docs => {
                             return (
                                 docs.documentation.map((doc, index) => {
                                     return (
@@ -75,7 +75,7 @@ export default function Columns(
 
 
 
-                        {columnsD.map(cols => {
+                        {columnsFilter.map(cols => {
                             return cols.columns.map((col, index) => {
                                 return (
                                     <Fragment key={index}>
@@ -239,7 +239,7 @@ export default function Columns(
                 <div id="column" className="main-content">
 
                     <div className="container grid grid-cols-12">
-                        {columnsD.map(cols => {
+                        {columnsFilter.map(cols => {
                             return cols.twocolumns.map((col, index) => {
                                 return (
                                     <Fragment key={index}>
@@ -293,7 +293,7 @@ export default function Columns(
 
                 <div id="column" className="main-content">
                     <div className="container grid grid-cols-12">
-                        {columnsD.map(cols => {
+                        {columnsFilter.map(cols => {
                             return cols.threecolumns.map((col, index) => {
                                 return (
                                     <Fragment key={index}>
@@ -342,7 +342,7 @@ export default function Columns(
             <div id="sectionContainer">
                 <div id="documentation">
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.documentation.map((col, index) => {
                             return (
                                 <Fragment key={index}>
@@ -361,7 +361,7 @@ export default function Columns(
 
                 <div id="column" className="main-content">
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.colexample.map((col, index) => {
                             return (
                                 <Fragment key={index}>
@@ -469,7 +469,7 @@ export default function Columns(
             <div id="sectionContainer">
                 <div id="documentation">
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.documentation.map((col, index) => {
                             return (
                                 <Fragment key={index}>
@@ -490,7 +490,7 @@ export default function Columns(
 
                 <div id="column" className="main-content">
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.colexample.map((col, index) => {
                             return (
                                 <Fragment key={index}>
@@ -633,7 +633,7 @@ export default function Columns(
                 <div id="documentation">
 
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.documentation.map((col, index) => {
                             return (
                                 <Fragment key={index}>
@@ -652,7 +652,7 @@ export default function Columns(
 
                 <div id="column" className="main-content">
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.colexample.map((col, index) => {
                             return (
                                 <Fragment key={index}>
@@ -771,7 +771,7 @@ export default function Columns(
                 <div id="documentation">
 
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.documentation.map((col, index) => {
                             return (
                                 <Fragment key={index}>
@@ -790,7 +790,7 @@ export default function Columns(
 
                 <div id="column" className="main-content">
 
-                    {columnsD.map(cols => {
+                    {columnsFilter.map(cols => {
                         return cols.colexample.map((col, index) => {
                             return (
                                 <Fragment key={index}>

@@ -28,21 +28,21 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
 
 
-        <Suspense fallback={<SearchBarFallback />}>
-            <div className="head-search relative flex flex-1 flex-shrink-0 p-1">
-                <label htmlFor="search" className="sr-only">
-                    Search
-                </label>
-                <input
-                    className="searchfield peer block w-full rounded-md border border-gray-200 py-[2px] pl-2 text-sm placeholder:text-gray-500"
-                    placeholder={placeholder}
-                    onChange={(e) => {
-                        handleSearch(e.target.value);
-                    }}
-                    defaultValue={searchParams.get('query')?.toString()}
-                />
-            </div>
-        </Suspense>
+
+        <div className="head-search relative flex flex-1 flex-shrink-0 p-1">
+            <label htmlFor="search" className="sr-only">
+                Search
+            </label>
+            <input
+                className="searchfield peer block w-full rounded-md border border-gray-200 py-[2px] pl-2 text-sm placeholder:text-gray-500"
+                placeholder={placeholder}
+                onChange={(e) => {
+                    handleSearch(e.target.value);
+                }}
+                defaultValue={searchParams.get('query')?.toString()}
+            />
+        </div>
+
 
     );
 }
