@@ -1,3 +1,4 @@
+import Banners from "./sections/banners";
 import Color from "./sections/color";
 import Columns from "./sections/columns";
 import Icons from "./sections/icons";
@@ -27,6 +28,9 @@ export default async function StyleGuideCotent(
             <Icons
                 query={query} currentPage={currentPage}
             />
+            {/* <Banners
+                query={query} currentPage={currentPage}
+            /> */}
         </>
     )
 }
