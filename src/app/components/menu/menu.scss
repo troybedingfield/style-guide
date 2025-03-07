@@ -1,4 +1,4 @@
-@use '../../../styles/varaibles';
+@use '../../../styles/variables';
 
 nav {
     display: flex;
@@ -6,7 +6,7 @@ nav {
     margin-bottom: 48px;
 
     a {
-        color: varaibles.$blue;
+        color: variables.$blue;
         text-decoration: none;
         // margin-bottom: 8px;
         width: 100%;
@@ -30,7 +30,7 @@ nav {
         }
 
         &:hover {
-            background-color: varaibles.$gray-200;
+            background-color: variables.$gray-200;
         }
     }
 }
@@ -175,13 +175,13 @@ nav {
                 height: 40px;
                 padding-left: 8px;
                 font-size: 16px;
-                color: varaibles.$gray-500;
+                color: variables.$gray-500;
                 background-color: #ffffff;
 
                 &::placeholder {
                     // padding-left: 4px;
                     font-size: 16px;
-                    color: varaibles.$gray-500;
+                    color: variables.$gray-500;
                 }
             }
         }

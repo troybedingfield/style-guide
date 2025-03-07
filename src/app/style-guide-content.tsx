@@ -28,9 +28,9 @@ export default async function StyleGuideCotent(
             <Icons
                 query={query} currentPage={currentPage}
             />
-            {/* <Banners
+            <Banners
                 query={query} currentPage={currentPage}
-            /> */}
+            />
         </>
     )
 }

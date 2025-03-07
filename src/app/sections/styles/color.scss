@@ -1,4 +1,4 @@
-@use "../../../styles/varaibles";
+@use "../../../styles/_variables";
 /* COLOR STYLES */
 
 #colors {
@@ -93,335 +93,335 @@
 }
 
 .blue {
-    color: varaibles.$blue;
+    color: variables.$blue;
 
     &.bg {
-        background-color: varaibles.$blue;
+        background-color: variables.$blue;
     }
 }
 
 .green {
-    color: varaibles.$green;
+    color: variables.$green;
 
     &.bg {
-        background-color: varaibles.$green;
+        background-color: variables.$green;
     }
 }
 
 .yellow {
-    color: varaibles.$yellow;
+    color: variables.$yellow;
 
     &.bg {
-        background-color: varaibles.$yellow;
+        background-color: variables.$yellow;
     }
 }
 
 .orange {
-    color: varaibles.$orange;
+    color: variables.$orange;
 
     &.bg {
-        background-color: varaibles.$orange;
+        background-color: variables.$orange;
     }
 }
 
 .red {
-    color: varaibles.$red;
+    color: variables.$red;
 
     &.bg {
-        background-color: varaibles.$red;
+        background-color: variables.$red;
     }
 }
 
 .pink {
-    color: varaibles.$pink;
+    color: variables.$pink;
 
     &.bg {
-        background-color: varaibles.$pink;
+        background-color: variables.$pink;
     }
 }
 
 .lime {
-    color: varaibles.$lime;
+    color: variables.$lime;
 
     &.bg {
-        background-color: varaibles.$lime;
+        background-color: variables.$lime;
     }
 }
 
 .cherry {
-    color: varaibles.$cherry;
+    color: variables.$cherry;
 
     &.bg {
-        background-color: varaibles.$cherry;
+        background-color: variables.$cherry;
     }
 }
 
 .tangerine {
-    color: varaibles.$tangerine;
+    color: variables.$tangerine;
 
     &.bg {
-        background-color: varaibles.$tangerine;
+        background-color: variables.$tangerine;
     }
 }
 
 .lemon {
-    color: varaibles.$lemon;
+    color: variables.$lemon;
 
     &.bg {
-        background-color: varaibles.$lemon;
+        background-color: variables.$lemon;
     }
 }
 
 .mint {
-    color: varaibles.$mint;
+    color: variables.$mint;
 
     &.bg {
-        background-color: varaibles.$mint;
+        background-color: variables.$mint;
     }
 }
 
 .teal {
-    color: varaibles.$teal;
+    color: variables.$teal;
 
     &.bg {
-        background-color: varaibles.$teal;
+        background-color: variables.$teal;
     }
 }
 
 .blueberry {
-    color: varaibles.$blueberry;
+    color: variables.$blueberry;
 
     &.bg {
-        background-color: varaibles.$blueberry;
+        background-color: variables.$blueberry;
     }
 }
 
 .plum {
-    color: varaibles.$plum;
+    color: variables.$plum;
 
     &.bg {
-        background-color: varaibles.$plum;
+        background-color: variables.$plum;
     }
 }
 
 .cranberry {
-    color: varaibles.$cranberry;
+    color: variables.$cranberry;
 
     &.bg {
-        background-color: varaibles.$cranberry;
+        background-color: variables.$cranberry;
     }
 }
 
 .dragon-fruit {
-    color: varaibles.$dragon-fruit;
+    color: variables.$dragon-fruit;
 
     &.bg {
-        background-color: varaibles.$dragon-fruit;
+        background-color: variables.$dragon-fruit;
     }
 }
 
 .plum {
-    color: varaibles.$plum;
+    color: variables.$plum;
 
     &.bg {
-        background-color: varaibles.$plum;
+        background-color: variables.$plum;
     }
 }
 
 .purple {
-    color: varaibles.$purple;
+    color: variables.$purple;
 
     &.bg {
-        background-color: varaibles.$purple;
+        background-color: variables.$purple;
     }
 }
 
 .light-blue {
-    color: varaibles.$light-blue;
+    color: variables.$light-blue;
 
     &.bg {
-        background-color: varaibles.$light-blue;
+        background-color: variables.$light-blue;
     }
 }
 
 .light-green {
-    color: varaibles.$light-green;
+    color: variables.$light-green;
 
     &.bg {
-        background-color: varaibles.$light-green;
+        background-color: variables.$light-green;
     }
 }
 
 .light-yellow {
-    color: varaibles.$light-yellow;
+    color: variables.$light-yellow;
 
     &.bg {
-        background-color: varaibles.$light-yellow;
+        background-color: variables.$light-yellow;
     }
 }
 
 .light-orange {
-    color: varaibles.$light-orange;
+    color: variables.$light-orange;
 
     &.bg {
-        background-color: varaibles.$light-orange;
+        background-color: variables.$light-orange;
     }
 }
 
 .light-red {
-    color: varaibles.$light-red;
+    color: variables.$light-red;
 
     &.bg {
-        background-color: varaibles.$light-red;
+        background-color: variables.$light-red;
     }
 }
 
 .light-pink {
-    color: varaibles.$light-pink;
+    color: variables.$light-pink;
 
     &.bg {
-        background-color: varaibles.$light-pink;
+        background-color: variables.$light-pink;
     }
 }
 
 .light-plum {
-    color: varaibles.$light-plum;
+    color: variables.$light-plum;
 
     &.bg {
-        background-color: varaibles.$light-plum;
+        background-color: variables.$light-plum;
     }
 }
 
 .light-purple {
-    color: varaibles.$light-purple;
+    color: variables.$light-purple;
 
     &.bg {
-        background-color: varaibles.$light-purple;
+        background-color: variables.$light-purple;
     }
 }
 
 .gray-600 {
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 
     &.bg {
-        background-color: varaibles.$gray-600;
+        background-color: variables.$gray-600;
     }
 }
 
 .gray-500 {
-    color: varaibles.$gray-500;
+    color: variables.$gray-500;
 
     &.bg {
-        background-color: varaibles.$gray-500;
+        background-color: variables.$gray-500;
     }
 }
 
 .gray-400 {
-    color: varaibles.$gray-400;
+    color: variables.$gray-400;
 
     &.bg {
-        background-color: varaibles.$gray-400;
+        background-color: variables.$gray-400;
     }
 }
 
 .gray-300 {
-    color: varaibles.$gray-300;
+    color: variables.$gray-300;
 
     &.bg {
-        background-color: varaibles.$gray-300;
+        background-color: variables.$gray-300;
     }
 }
 
 .gray-200 {
-    color: varaibles.$gray-200;
+    color: variables.$gray-200;
 
     &.bg {
-        background-color: varaibles.$gray-200;
+        background-color: variables.$gray-200;
     }
 }
 
 .gray-100 {
-    color: varaibles.$gray-100;
+    color: variables.$gray-100;
 
     &.bg {
-        background-color: varaibles.$gray-100;
+        background-color: variables.$gray-100;
     }
 }
 
 .blue-gray {
-    color: varaibles.$blue-gray;
+    color: variables.$blue-gray;
 
     &.bg {
-        background-color: varaibles.$blue-gray;
+        background-color: variables.$blue-gray;
     }
 }
 
 .red-gray {
-    color: varaibles.$red-gray;
+    color: variables.$red-gray;
 
     &.bg {
-        background-color: varaibles.$red-gray;
+        background-color: variables.$red-gray;
     }
 }
 
 .dark-green {
-    color: varaibles.$dark-green;
+    color: variables.$dark-green;
 
     &.bg {
-        background-color: varaibles.$dark-green;
+        background-color: variables.$dark-green;
     }
 }
 
 .main-nav-green {
-    color: varaibles.$main-nav-green;
+    color: variables.$main-nav-green;
 
     &.bg {
-        background-color: varaibles.$main-nav-green;
+        background-color: variables.$main-nav-green;
     }
 }
 
 .hover-green {
-    color: varaibles.$hover-green;
+    color: variables.$hover-green;
 
     &.bg {
-        background-color: varaibles.$hover-green;
+        background-color: variables.$hover-green;
     }
 }
 
 .brand-green {
-    color: varaibles.$brand-green;
+    color: variables.$brand-green;
 
     &.bg {
-        background-color: varaibles.$brand-green;
+        background-color: variables.$brand-green;
     }
 }
 
 .code-teal {
-    color: varaibles.$code-teal;
+    color: variables.$code-teal;
 
     &.bg {
-        background-color: varaibles.$code-teal;
+        background-color: variables.$code-teal;
     }
 }
 
 .black {
-    color: varaibles.$black;
+    color: variables.$black;
 
     &.bg {
-        background-color: varaibles.$black;
+        background-color: variables.$black;
     }
 }
 
 .white {
-    color: varaibles.$white;
+    color: variables.$white;
 
     &.bg {
-        background-color: varaibles.$white;
+        background-color: variables.$white;
     }
 }
 
 .border {
-    border: 2px solid varaibles.$gray-300;
+    border: 2px solid variables.$gray-300;
 }
 
 @media screen and (max-width: 475px) {

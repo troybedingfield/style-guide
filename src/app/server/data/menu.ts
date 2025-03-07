@@ -13,7 +13,7 @@ export const menuData = [
     { id: 4, name: 'icons', link: '#icons', category: 'global', hash: 'icon' },
     // { id: 5, name: 'fields', link: '#forms', category: 'global', hash: 'fields' },
     // { id: 6, name: 'tooltips', link: '#tooltips', category: 'global', hash: 'tooltips' },
-    // { id: 7, name: 'banners', link: '#banners', category: 'global', hash: 'banner' },
+    { id: 7, name: 'banners', link: '#banners', category: 'global', hash: 'banner' },
     // { id: 8, name: 'buttons', link: '#buttons', category: 'global', hash: 'button' },
     // { id: 9, name: 'dashboard', link: '#dashboard', category: 'global', hash: 'dashboard' },
     // { id: 10, name: 'badges', link: '#badges', category: 'global', hash: 'badges' },

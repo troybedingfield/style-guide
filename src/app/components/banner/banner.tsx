@@ -7,17 +7,19 @@ export default function Banner(props: {
     type?: "info" | "success" | "error" | 'warning' | undefined
     bannerStyle?: "single" | "multi" | undefined
     multiItems?: Array<string> | undefined
+    open?: boolean
 }) {
 
     const {
         children,
         type = 'info',
         bannerStyle = 'single',
-        multiItems
+        multiItems,
+        open = false,
     } = props
 
-    const [bannerType, setBannerType] = useState(type)
-    const [isOpen, setisOpen] = useState(false)
+
+    const [isOpen, setisOpen] = useState(open)
 
     function handleBannerOpen() {
         setisOpen(isOpen => !isOpen)
@@ -40,7 +42,19 @@ export default function Banner(props: {
 
                             >
 
-                                <b>{children}</b>
+                                <span className='flex gap-2'>
+                                    {isOpen &&
+                                        <span className='flex rotate-90'>
+                                            {`>`}
+                                        </span>
+                                    }
+                                    {!isOpen &&
+                                        <>
+                                            {`>`}
+                                        </>
+                                    }
+                                    <b>{children}</b>
+                                </span>
 
                             </span>
                         </div>
