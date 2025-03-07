@@ -1,6 +1,6 @@
 @use "tailwindcss";
 
-@use './varaibles';
+@use './_variables';
 
 @use "../styles/fonts/icon-font/icons.css";
 
@@ -17,79 +17,79 @@ html {
 h1 {
     font-weight: 700;
     font-size: 72px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h2 {
     font-weight: 300;
     font-size: 52px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h3 {
     font-weight: 300;
     font-size: 42px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h4 {
     font-weight: 300;
     font-size: 26px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h5 {
     font-weight: 700;
     font-size: 18px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h6 {
     font-weight: 700;
     font-size: 16px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h7 {
     font-weight: 400;
     font-size: 18px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 .gridCells {
     font-weight: 400;
     font-size: 18px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h6.gridCells {
     font-weight: 400;
     font-size: 18px;
-    color: varaibles.$gray-600;
+    color: variables.$gray-600;
 }
 
 h8 {
     font-weight: 400;
     font-size: 16px;
-    color: varaibles.$gray-500;
+    color: variables.$gray-500;
 }
 
 .bodyCopy {
     font-weight: 400;
     font-size: 16px;
-    color: varaibles.$gray-500;
+    color: variables.$gray-500;
 }
 
 h9 {
     font-weight: 400;
     font-size: 14px;
-    color: varaibles.$gray-500;
+    color: variables.$gray-500;
 }
 
 .smallCopy {
     font-weight: 400;
     font-size: 14px;
-    color: varaibles.$gray-500;
+    color: variables.$gray-500;
 }
 
 .text-center {
@@ -97,7 +97,7 @@ h9 {
 }
 
 .panel-default>.panel-heading {
-    border-bottom: solid 2px varaibles.$gray-500;
+    border-bottom: solid 2px variables.$gray-500;
 }
 
 .fixedHead {
@@ -113,7 +113,7 @@ nav {
     flex-direction: column;
 
     a {
-        color: varaibles.$blue;
+        color: variables.$blue;
         text-decoration: none;
         // margin-bottom: 8px;
         width: 100%;
@@ -136,7 +136,7 @@ nav {
     padding: 0 24px;
 
     .section-head {
-        border-bottom: 2px solid varaibles.$green;
+        border-bottom: 2px solid variables.$green;
         margin-bottom: 8px;
     }
 }
@@ -162,7 +162,7 @@ nav {
             width: 20px;
             border-radius: 10px;
             // background-image: url(../assets/images/cc-blue.png);
-            // background: varaibles.$blue;
+            // background: variables.$blue;
             // content: "X";
             // color: #fff;
         }
@@ -212,7 +212,7 @@ nav {
         height: 100%;
         overflow: hidden;
         // height: 100%;
-        border-right: 1px solid varaibles.$gray-300;
+        border-right: 1px solid variables.$gray-300;
 
     }
 
@@ -303,7 +303,7 @@ nav {
             transition: 0.5s;
 
             // height: 100%;
-            //  border-right: 1px solid varaibles.$gray-300;
+            //  border-right: 1px solid variables.$gray-300;
             &.open {
                 left: 0;
                 transition: 0.5s;
@@ -359,7 +359,7 @@ nav {
             top: 50px;
 
             // height: 100%;
-            //  border-right: 1px solid varaibles.$gray-300;
+            //  border-right: 1px solid variables.$gray-300;
             &.open {
                 left: 0;
             }
@@ -401,7 +401,7 @@ nav {
     left: 0px;
     top: 0;
     z-index: 9000000000000000000000000;
-    // background-color: rgba(varaibles.$color: #000000, varaibles.$alpha: 0.5);
+    // background-color: rgba(variables.$color: #000000, variables.$alpha: 0.5);
     width: 100%;
     height: 100%;
     visibility: hidden;

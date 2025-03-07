@@ -1,12 +1,123 @@
+type bannersData = {
+    title: string,
+    containerhide: [
+        {
+            section: string,
+            meta: string
+        },
+    ],
+    componenthide: [
+        {
+            section: string,
+            meta: string
+        },
+    ],
+    current: {
+        current: string,
+        meta: string
+    },
+    ideal: {
+        ideal: string,
+        meta: string
+    },
+    banners: [
+        {
+            type: string,
+            class: string,
+            title: string,
+            message: string,
+            meta: string
+        },
 
-export const Banners = [
+
+    ],
+    currentideal: [
+        {
+            type: string,
+            class: string,
+            title: string,
+            message: string,
+            meta: string
+        },
+
+    ],
+    sections: [
+        {
+            section: string,
+            title: string,
+            body: string,
+            example: string,
+            meta: string
+        },
+
+    ],
+    code: [
+
+        {
+            name: string,
+            example: string
+        },
+        {
+            name: string,
+            example: string
+        },
+        {
+            name: string,
+            example: string,
+            meta: string
+        },
+        {
+            name: string,
+            example: string,
+            meta: string
+        },
+
+    ],
+    toastrcode: [
+        {
+            name: string,
+            example: string
+        },
+    ],
+    colors: [
+        {
+            color: string,
+            color1: string,
+            color2: string,
+            color3: string,
+            copy1: string,
+            copy2: string,
+            copy3: string,
+            meta: string
+        },
+
+    ],
+    toast: [
+        {
+            type: string,
+            btnText: string,
+            toastText: string,
+            click: string,
+            meta: string
+        },
+
+    ],
+    spacer: [
+        {
+            type: string
+        }
+    ],
+    meta: string
+}
+
+export const bannersData = [
     {
         title: "Banners",
         containerhide: [
             { section: "banners", meta: "banners" },
         ],
-        rpocomponenthide: [
-            { section: "banners", meta: "banners RPO Component RPOComponent" },
+        componenthide: [
+            { section: "banners", meta: "banners Component Component" },
         ],
         current: { current: "Current:", meta: "banners current" },
         ideal: { ideal: "Ideal:", meta: "banners ideal" },
@@ -33,72 +144,13 @@ export const Banners = [
             { section: "page", title: "Page Level Banner Placement", body: "Position the banner at the top of the page just below the title and 3rd level navigation", example: "", meta: "banners" },
             { section: "toast", title: "Toast Messages", body: "Displayed for short period of time, manually or self-dismissing.", example: "", meta: "banners" },
             { section: "full", title: "Full Page Progress Indicators", body: "A translucent black background overlays the the entire screen.\n\nBar starts from the left side and continually moves to the right so it appears the system is still active.\n\nGood to use for long loading times along with the inability to exit out of the operation.", example: "", meta: "banners" },
-            { section: "rpo-component", title: "readyX Component", body: "", example: "", meta: "banners RPO Components RPOComponents" },
-            { section: "readyxlibrary", title: "readyX Component Library", body: "https://atl0dev81web.dev.proliant.org/readyXviewer/", example: "", meta: "banners RPO Components RPOComponents" },
+
         ],
         code: [
-            //     {name: "angular", example: '\n <div id="_ErrorPanel" class="messageSmall error alert alert-danger" style="display: none;">\n\n<div class="icon"></div>\n<h5><i class="collapseExpandSmall icon-expand expand pull-left"></i><span class="title">Error</span></h5>\n<div class="messageList">\n<ul id="_ErrorList"></ul>\n<ul id="_ErrorListClientSide"></ul>\n</div>\n\n</div>\n\n<div id="_ReportsPanel" class="messageSmall reports alert alert-info" style="display: none;">\n\n<div class="icon"></div>\n<div id="reportsPanelClose"></div>\n<h5><em>Completed Reports</em></h5>\n<div class="messageList">\n<ul id="_ReportsList">\n<li>Any report you run that is flagged to notify you upon completion will show up in this window.</li>\n</ul>\n</div>\n<div class="Refresh" title="Refresh" onclick="PollReportJobs();"></div>\n\n</div>\n\n<div id="_WarningPanel" class="messageSmall warning alert alert-warning" style="display: none;">\n\n<div class="icon"></div>\n\n<h5><i class="collapseExpandSmall icon-expand expand pull-left"></i><span class="title">Warning</span></h5>\n<div class="messageList">\n<ul id="_WarningList"></ul>\n<ul id="_WarningListClientSide"></ul>\n</div>\n\n</div>\n\n<div id="_InformationPanel" class="messageSmall information alert alert-info" style="display: none;">\n\n<div class="icon"></div>\n\n<h5><i class="collapseExpandSmall icon-expand expand pull-left"></i><span class="title">Information</span></h5>\n<div class="messageList">\n<ul id="_InformationList"></ul>\n<ul id="_InformationListClientSide"></ul>\n</div>\n\n</div>'},
-            //     {name:"Warning",example: 'this.warningPanel = $("[id$=\'_WarningPanel\']");\n\
-            // this.warningListClientSide = $("[id$=\'_WarningListClientSide\']");\n\
-            // this.warningListServerSide = $("[id$=\'_WarningList\']");\n\ \n\this.bodyContainer = $("#container");\n\ \n\
-            // addWarningMessage(message: string) {\n\
-            // var messagePanel = $("[id$=\'_WarningPanel\']");\n\
-            // var messageList = $("[id$=\'_WarningListClientSide\']");\n\ \n\
-            // if (message.length > 0) {\n\
-            // messagePanel.show();\n\
-            // messageList.append(`<li>${message}</li>`);\n\
-            // }\n\
-            // }\n\ \n\
-            //  displayMessages(messageObj: any) {\n\
-            // if (messageObj === null || messageObj === undefined) {\n\
-            // return;\n\
-            // }\n\ \n\
-            //  this._errors = messageObj["Errors"] || messageObj["errors"] || [];\n\
-            // this._warnings = messageObj["Warnings"] || messageObj["warnings"] || [];\n\
-            // this._messages = messageObj["Messages"] || messageObj["messages"] || [];\n\ \n\
-            //  if (this._errors.length === 0 && this._warnings.length === 0 && this._messages.length === 0) {\n\
-            // return;\n\
-            // }\n\ \n\
-            // let labels = document.getElementsByTagName("label"), innerText, errorInput;\n\
-            // // Clear out Warnings\
-            // this.warningListClientSide.empty();\n\
-            // // Populate Warnings from the object\n\
-            // try {\n\ \n\ if (this._warnings !== undefined && this._warnings !== null && this._warnings.length > 0) {\n\
-            //  var showPanel = false;\n\
-            // for (c = 0; c < this._warnings.length; c++) {\n\
-            // if (this._warnings[c].length > 0) {\n\
-            // this.warningListClientSide.append(\'<li>\' + this._warnings[c] + \'</li>\');\n\
-            //  showPanel = true;\n\
-            //  }\n\
-            //  }\n\
-            //  if (showPanel === true) {\n\
-            // this.warningPanel.show();\n\
-            // }\n\
-            // }\n\
-            // } catch (exception) { }\n\ \n\
-            //  // hide panels is no serverside and client side errors\n\
-            // this.hideEmptyPanels();\
-            // }'},
-            //     {name:"Informational",example: 'this.messagePanel = $("[id$=\'_InformationPanel\']");\n\
-            //     this.messageListClientSide = $("[id$=\'_InformationListClientSide\']");\n\
-            //     this.messageListServerSide = $("[id$=\'_InformationList\']");', meta: "banners"},
-            //     {name: "Error",example: 'this.errorPanel = $("[id$=\'_ErrorPanel\']");\n\
-            //     this.errorListClientSide = $("[id$=\'_ErrorListClientSide\']");\n\
-            //     this.errorListServerSide = $("[id$=\'_ErrorList\']");', meta: "banners"},
             {
-                name: "Informational", example: 'Example:\n\n <pro-banner text="Primary Text" [detailMessages]="[ "Detail Message #1", "Detail Message #2", "Detail Message #3" ]">\
-</pro-banner>'},
-            {
-                name: "Warning", example: 'Example:\n\n <pro-banner type="warning" text="Primary Text" [detailMessages]="[ "Detail Message #1", "Detail Message #2", "Detail Message #3" ]">\
-</pro-banner>'},
-            {
-                name: "Success", example: 'Example:\n\n <pro-banner type="success" text="Primary Text" [detailMessages]="[ "Detail Message #1", "Detail Message #2", "Detail Message #3" ]">\
-</pro-banner>', meta: "banners"
+                name: "Informational", example: ''
             },
-            {
-                name: "Error", example: 'Example:\n\n <pro-banner type="error" text="Primary Text" [detailMessages]="[ "Detail Message #1", "Detail Message #2", "Detail Message #3" ]">\
-</pro-banner>', meta: "banners"
-            },
+
 
         ],
         toastrcode: [
@@ -108,10 +160,10 @@ export const Banners = [
 
         ],
         colors: [
-            { color: "blue", color1: "#346095", color2: "#e2e8fb", color3: "#bcd9ef", copy1: "Colored Text:", copy2: "Background Blue:", copy3: "Grid Line Blue:", meta: "banners" },
-            { color: "green", color1: "#7dc855", color2: "#e7f8de", color3: "", copy1: "Colored Text:", copy2: "Background Green:", copy3: "", meta: "banners" },
-            { color: "yellow", color1: "#ec7d1b", color2: "#faf3d6", color3: "", copy1: "Colored Text:", copy2: "Background Yellow:", copy3: "", meta: "banners" },
-            { color: "red", color1: "#ca1011", color2: "#fbe2e2", color3: "", copy1: "Colored Text:", copy2: "Background Red:", copy3: "", meta: "banners" },
+            { color: "Blue", color1: "#3173C2", color2: "#DCE3FA", color3: "#B3D2EA", copy1: "Colored Text:", copy2: "Background Blue:", copy3: "Line Blue:", meta: "banners" },
+            { color: "Green", color1: "#34B439", color2: "#D1F3D2", color3: "", copy1: "Colored Text:", copy2: "Background Green:", copy3: "", meta: "banners" },
+            { color: "Yellow", color1: "#E47B12", color2: "#F3EACC", color3: "", copy1: "Colored Text:", copy2: "Background Yellow:", copy3: "", meta: "banners" },
+            { color: "Red", color1: "#DF120B", color2: "#F6DAD7", color3: "", copy1: "Colored Text:", copy2: "Background Red:", copy3: "", meta: "banners" },
         ],
         toast: [
             { type: "success", btnText: "success toast", toastText: "Success", click: "successToast()", meta: "banners" },
@@ -121,7 +173,8 @@ export const Banners = [
         ],
         spacer: [
             { type: 'spacer' }
-        ]
+        ],
+        meta: 'banners'
 
     }
 ]
