@@ -4,6 +4,7 @@ import Banner from "../components/banner/banner";
 import useHighlightSearch from "../hooks/useHighlight";
 import { bannersData } from "../server/data/banners";
 import { Fragment } from 'react';
+import ToastTest from '../components/NewToast/toasttest';
 
 export default function Banners(props: {
     query: string,
@@ -14,7 +15,8 @@ export default function Banners(props: {
     const bannersD = bannersData;
     const bannersSections = bannersData[0]?.sections;
     const bannersColors = bannersData[0]?.colors;
-    // const bannersDoc = bannersData[0]?.documentation;
+    const bannersToasts = bannersData[0]?.toast;
+
     const highlightedMainTitle = useHighlightSearch(bannersData, query, 'title');
     const highlightedSectionBody = useHighlightSearch(bannersSections, query, 'body');
     const highlightedSectionTitle = useHighlightSearch(bannersSections, query, 'title');
@@ -27,6 +29,7 @@ export default function Banners(props: {
     const highlitedColorsColor3 = useHighlightSearch(bannersColors, query, 'color3');
     const highlitedColorsCopy3 = useHighlightSearch(bannersColors, query, 'copy3');
 
+    const highlitedStoastsTitle = useHighlightSearch(bannersToasts, query, 'Title');
 
 
     return (
@@ -833,6 +836,72 @@ export default function Banners(props: {
                         <Banner bannerStyle="multi" open={true} type='error' multiItems={['test', 'test']}>Title</Banner>
                     </div>
                 </div>
+                <div id="sectionContainer">
+                    <div id="documentation">
+
+
+                        <div>
+                            <h5>
+                                {highlightedSectionTitle.map((item, index) => (
+                                    <Fragment key={index}>
+
+                                        {item.parts.map((part, partIndex) => {
+                                            if (index === 6) {
+
+                                                return (
+
+                                                    <span
+                                                        key={partIndex}
+                                                        style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent' }}
+                                                    >
+                                                        {part.text}
+                                                    </span>
+
+                                                )
+                                            }
+
+
+
+                                        })}
+                                    </Fragment>
+                                ))}
+                            </h5>
+                            <p className="pb-6">
+                                {highlightedSectionBody.map((item, index) => (
+                                    <Fragment key={index}>
+
+                                        {item.parts.map((part, partIndex) => {
+                                            if (index === 6) {
+
+                                                return (
+
+                                                    <span
+                                                        key={partIndex}
+                                                        style={{ backgroundColor: part.highlighted ? 'yellow' : 'transparent' }}
+                                                    >
+                                                        {part.text}
+                                                    </span>
+
+                                                )
+                                            }
+
+
+
+                                        })}
+                                    </Fragment>
+                                ))}
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div id="banners-inner" className="main-content gap-4">
+
+                        <ToastTest />
+                    </div>
+                </div>
+
+
             </div>
 
 

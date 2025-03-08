@@ -5,6 +5,36 @@
 @use "../styles/fonts/icon-font/icons.css";
 
 
+:root {
+    --color-success: #34B439;
+    --color-warning: #E47B12;
+    --color-error: #DF120B;
+    --color-info: #3173C2;
+    --color-text-disabled: lightgray;
+    --color-background-disabled: rgba(128, 128, 128, 0.2);
+    --color-button-default: rgba(0, 0, 0, 0.95);
+    --color-button-border-default: rgb(51, 0, 0);
+    --color-text-button: white;
+    --color-button-outline: white;
+    --color-transparent: transparent;
+    --color-clear-button-hover: rgba(211, 211, 211, 0.2);
+    --color-clear-button-success-hover: rgba(144, 238, 144, 0.2);
+    --color-clear-button-warning-hover: rgba(255, 196, 0, 0.2);
+    --color-clear-button-error-hover: rgb(255, 71, 71, 0.2);
+    --roboto: "Roboto", sans-serif;
+    --roboto-thin: 100;
+    --roboto-light: 300;
+    --roboto-regular: 400;
+    --roboto-medium: 500;
+    --roboto-bold: 700;
+    --roboto-black: 900;
+    --roboto-italic: italic;
+    --roboto-normal: normal;
+
+    // dark mode colors
+    --dark-color-button-default: rgb(69, 10, 10, 0.8);
+}
+
 
 html {
     scroll-behavior: smooth;
@@ -268,13 +298,13 @@ nav {
         padding-left: 255px;
         position: relative;
 
-        section {
-            margin-bottom: 56px;
+        // section {
+        //     margin-bottom: 56px;
 
-            &:first-child {
-                margin-top: 64px;
-            }
-        }
+        //     &:first-child {
+        //         margin-top: 64px;
+        //     }
+        // }
     }
 }
 
@@ -861,4 +891,18 @@ pre {
     border: 1px solid #e7edf2;
     border-radius: 4px;
     overflow: hidden;
+}
+
+.toast-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 75px;
+    right: 0%;
+    // transform: translateX(-50%);
+    // background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    // padding: 10px 20px;
+    // border-radius: 5px;
+    z-index: 1000;
 }
